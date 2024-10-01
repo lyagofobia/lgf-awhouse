@@ -1,0 +1,17 @@
+<div class="container-fluid p-0">
+    <!-- offsidebar-->
+    <!-- <app-offsidebar></app-offsidebar> -->
+    <!-- top navbar-->
+    <app-header></app-header>
+    <!-- sidebar-->
+    <app-sidebar class="" [menuItems]="menuItems"></app-sidebar>
+    <!-- Main section-->
+    <section>
+        <!-- Page content-->
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+    <!-- Page footer-->
+    <footer app-footer></footer>
+</div>

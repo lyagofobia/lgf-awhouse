@@ -1,0 +1,15 @@
+<!-- START Sidebar (left)-->
+<div class="float-start h-100" style="width: 300px;">
+    <nav>
+        <!-- START sidebar nav-->
+        <ul class="list-group">
+            <li class="list-group-item d-flex" *ngFor='let item of menuItems'>
+                <span class="{{item.icon}}"></span>
+                {{item.title}}
+            </li>
+        </ul>
+        <!-- END sidebar nav-->
+    </nav>
+
+</div>
+<!-- END Sidebar (left)-->
