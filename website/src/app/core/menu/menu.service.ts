@@ -8,7 +8,7 @@ export class MenuService {
   menuItems: MenuItem[];
 
   constructor() {
-      this.menuItems = [];
+    this.menuItems = [];
   }
 
   /**
@@ -16,10 +16,10 @@ export class MenuService {
    * @param items Items do menu.
    */
   addMenu(items: MenuItem[]) {
-      items.forEach((item) => {
-          // if (!this.menuItems.includes(item))
-              this.menuItems.push(item);
-      });
+    items.forEach((item) => {
+      // if (!this.menuItems.includes(item))
+      this.menuItems.push(item);
+    });
   }
 
   /**
@@ -27,6 +27,8 @@ export class MenuService {
    * @returns Array contendo os itens menu.
    */
   getMenu() {
-      return this.menuItems;
+    return this.menuItems;
   }
+
+
 }

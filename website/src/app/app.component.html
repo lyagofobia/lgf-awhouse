@@ -1,1 +1,31 @@
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <!-- top navbar-->
+                <app-header class="p-0"></app-header>
+            </div>
+            <div class="d-flex" style="min-height:100vh;">
+                <div class="">
+                    <!-- sidebar-->
+                    <app-sidebar class="border-end p-0" [menuItems]="menuItems"></app-sidebar>
+                </div>
+                <div class="flex-fill">
+                    <!-- Main section-->
+                    <section [@routeTransition]="route.snapshot.data" class="col">
+                        <!-- Page content-->
+                        <router-outlet></router-outlet>
+                    </section>
+                </div>
+                <div class="">
+                    <!-- offsidebar-->
+                    <app-offsidebar class="border-start p-0"></app-offsidebar>
+                </div>
+            </div>
+            <div class="row align-self-strech">
+                <!-- Page footer-->
+                <app-footer class="border-top p-0"></app-footer>
+            </div>
+        </div>
+    </div>
+</div>

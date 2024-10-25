@@ -1,4 +1,5 @@
 import { TemplateRef } from "@angular/core";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Modela os items do menu.
@@ -19,7 +20,7 @@ export class MenuItem {
     /**
      * Classe CSS do ícone do item. 
      */
-    icon?: string;
+    icon?: IconDefinition;
     /**
      * Lista de submenus associados.
      */
@@ -31,7 +32,7 @@ export class MenuItem {
                 title?: string
                 isHeading?: boolean
                 link?: string
-                icon?: string
+                icon?: IconDefinition
                 submenu?: MenuItem[]
             }
     ) {

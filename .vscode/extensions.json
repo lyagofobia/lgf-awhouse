@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "angular.ng-template",
+        "johnpapa.angular2",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "kisstkondoros.vscode-codemetrics"
+    ]
+}

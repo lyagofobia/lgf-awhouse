@@ -1,8 +1,9 @@
 import { MenuItem } from "../../core/menu/MenuItem";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const OVERVIEW = new MenuItem({
     title: 'Overview'
-    , icon: 'fa-solid fa-house'
+    , icon: faHouse
     , link: '/overview'
 });
 

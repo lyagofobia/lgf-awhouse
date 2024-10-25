@@ -1,7 +1,6 @@
 import { Type, Provider, EnvironmentProviders } from '@angular/core';
 import { CanActivateChildFn, CanActivateFn, CanDeactivateFn, CanMatchFn, Data, LoadChildren, RedirectFunction, Resolve, ResolveData, ResolveFn, Route, Routes, RunGuardsAndResolvers, UrlMatcher } from '@angular/router';
 import { OverviewComponent } from './overview/overview.component';
-import { LayoutComponent } from '../layout/layout.component';
 
 /**
  * Implementação base de Route.
@@ -75,14 +74,5 @@ const OVERVIEW_ROUTE = new BaseRoute({
 });
 
 export const APP_ROUTES: Routes = [
-    new BaseRoute(
-        {
-            title: "Lyagofobia's Awhouse"
-            , component: LayoutComponent
-            , path: ""
-            , children: [
-                OVERVIEW_ROUTE
-            ]
-        }
-    )
+    OVERVIEW_ROUTE
 ];
