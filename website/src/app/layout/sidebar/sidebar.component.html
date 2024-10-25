@@ -1,15 +1,17 @@
 <!-- START Sidebar (left)-->
-<nav class="border-end" [@collapse]="collapse ? 'open' : 'closed'" style="height:100vh">
+<nav class="border-end" style="height:100vh">
+    <div class="d-flex flex-row-reverse">
+        <fa-icon class="p-2" [@shift]="collapse ? 'open' : 'closed'" [icon]="icons.faBars" size="lg" role="button"
+            (click)="collapse=!collapse">
+        </fa-icon>
+    </div>
     <!-- START sidebar nav-->
-    <ul class="list-group">
-        <div class="mx-auto">
-            <fa-icon class="p-2" [icon]="icons.faBars" size="lg" role="button" (click)="collapse=!collapse">
-            </fa-icon>
-        </div>
-        <a *ngFor='let item of menuItems' class="list-group-item list-group-item-action d-flex border-0 border-bottom"
+    <ul [@collapse]="collapse ? 'open' : 'closed'" class="list-group">
+        <a *ngFor='let item of menuItems'
+            class="list-group-item list-group-item-action d-flex align-items-center justify-content-center border-0 border-bottom"
             [routerLink]="item.link">
-            <fa-icon *ngIf="item.icon" class="mx-1" [icon]="item.icon"></fa-icon>
-            <span *ngIf="collapse">{{item.title}}</span>
+            <fa-icon *ngIf="item.icon" class="mx-2" [icon]="item.icon"></fa-icon>
+            <h5 class="text-truncate m-0">{{item.title}}</h5>
         </a>
     </ul>
     <!-- END sidebar nav-->

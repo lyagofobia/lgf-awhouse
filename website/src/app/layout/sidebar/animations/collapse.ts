@@ -31,3 +31,37 @@ export function slide(
         ]
     )
 }
+
+export function shift(
+    config: {
+        openPosition?: string
+        , closedPosition?: string
+        , timing?: string | number
+    } = {
+            openPosition: '10px'
+            , closedPosition: '12px'
+            , timing: 200
+        }
+) {
+    return trigger(
+        'shift'
+        , [
+            state('open', style(
+                {
+                    position: 'relative'
+                    , right: config.openPosition || '10px'
+                }
+            )
+            ),
+            state('closed', style(
+                {
+                    position: 'relative'
+                    , right: config.closedPosition || '13px'
+                }
+            )
+            ),
+            transition('open => closed', [animate(config.timing || 200)]),
+            transition('closed => open', [animate(config.timing || 200)])
+        ]
+    )
+}
