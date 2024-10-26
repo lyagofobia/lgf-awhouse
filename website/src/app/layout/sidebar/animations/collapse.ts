@@ -38,8 +38,8 @@ export function shift(
         , closedPosition?: string
         , timing?: string | number
     } = {
-            openPosition: '10px'
-            , closedPosition: '12px'
+            openPosition: '0px'
+            , closedPosition: '1px'
             , timing: 200
         }
 ) {
@@ -49,14 +49,14 @@ export function shift(
             state('open', style(
                 {
                     position: 'relative'
-                    , right: config.openPosition || '10px'
+                    , right: config.openPosition || '0px'
                 }
             )
             ),
             state('closed', style(
                 {
                     position: 'relative'
-                    , right: config.closedPosition || '13px'
+                    , right: config.closedPosition || '1px'
                 }
             )
             ),

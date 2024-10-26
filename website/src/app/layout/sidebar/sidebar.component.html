@@ -1,9 +1,10 @@
 <!-- START Sidebar (left)-->
 <nav class="border-end" style="height:100vh">
     <div class="d-flex flex-row-reverse">
-        <fa-icon class="p-2" [@shift]="collapse ? 'open' : 'closed'" [icon]="icons.faBars" size="lg" role="button"
-            (click)="collapse=!collapse">
-        </fa-icon>
+        <button [@shift]="collapse ? 'open' : 'closed'" class="btn btn-light bg-transparent border-0" type="button" (click)="collapse=!collapse">
+            <fa-icon class="p-2" [icon]="icons.faBars" size="lg">
+            </fa-icon>
+        </button>
     </div>
     <!-- START sidebar nav-->
     <ul [@collapse]="collapse ? 'open' : 'closed'" class="list-group">
