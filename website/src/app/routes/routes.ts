@@ -1,99 +1,55 @@
-import { Type, Provider, EnvironmentProviders } from '@angular/core';
-import { CanActivateChildFn, CanActivateFn, CanDeactivateFn, CanMatchFn, Data, LoadChildren, RedirectFunction, Resolve, ResolveData, ResolveFn, Route, Routes, RunGuardsAndResolvers, UrlMatcher } from '@angular/router';
+import { ComponentsComponent } from './lgf-components/components.component';
 import { OverviewComponent } from './lgf-overview/overview.component';
+import { Route, Routes } from '@angular/router';
+import { ThemesComponent } from './lgf-themes/themes.component';
+import { ProjectDimensionsComponent } from './lgf-project-dimensions/project-dimensions.component';
+import { RetroBoardGameComponent } from './lgf-retro-board-game/retro-board-game.component';
 
-/**
- * Implementação base de Route.
- */
-export class BaseRoute implements Route {
-    title?: string | Type<Resolve<string>> | ResolveFn<string>;
-    path?: string;
-    pathMatch?: 'prefix' | 'full';
-    matcher?: UrlMatcher;
-    component?: Type<any>;
-    redirectTo?: string | RedirectFunction;
-    outlet?: string;
-    canActivate?: CanActivateFn[];
-    canMatch?: CanMatchFn[];
-    canActivateChild?: CanActivateChildFn[];
-    canDeactivate?: CanDeactivateFn<any>[];
-    data?: Data;
-    resolve?: ResolveData;
-    children?: Routes;
-    loadChildren?: any;
-    runGuardsAndResolvers?: any;
-    providers?: (Provider | EnvironmentProviders)[];
-
-    constructor(
-        config:
-            {
-                title?: string | Type<Resolve<string>> | ResolveFn<string>;
-                path?: string;
-                pathMatch?: 'prefix' | 'full';
-                matcher?: UrlMatcher;
-                component?: Type<any>;
-                redirectTo?: string | RedirectFunction;
-                outlet?: string;
-                canActivate?: Array<CanActivateFn>;
-                canMatch?: Array<CanMatchFn>;
-                canActivateChild?: Array<CanActivateChildFn>;
-                canDeactivate?: Array<CanDeactivateFn<any>>;
-                data?: Data;
-                resolve?: ResolveData;
-                children?: Routes;
-                loadChildren?: LoadChildren;
-                runGuardsAndResolvers?: RunGuardsAndResolvers;
-                providers?: Array<Provider | EnvironmentProviders>;
-            } = {}
-    ) {
-        this.title = config?.title;
-        this.path = config?.path;
-        this.pathMatch = config?.pathMatch ? config.pathMatch : 'prefix';
-        this.matcher = config?.matcher;
-        this.component = config?.component;
-        this.redirectTo = config?.redirectTo;
-        this.outlet = config?.outlet;
-        this.canActivate = config?.canActivate;
-        this.canMatch = config?.canMatch;
-        this.canActivateChild = config?.canActivateChild;
-        this.canDeactivate = config?.canDeactivate;
-        this.data = config?.data;
-        this.resolve = config?.resolve;
-        this.children = config?.children;
-        this.loadChildren = config?.loadChildren;
-        this.runGuardsAndResolvers = config?.runGuardsAndResolvers;
-        this.providers = config?.providers;
-    }
-}
-
-const OVERVIEW_ROUTE = new BaseRoute({
+const OVERVIEW_ROUTE: Route = {
     title: "Overview"
     , component: OverviewComponent
     , path: "overview"
     , children: []
     , data: {
-    }
-});
-
-const COMPONENTS_ROUTE = new BaseRoute({
+    }, 
+};
+const COMPONENTS_ROUTE: Route = {
     title: "Components"
-    , component: OverviewComponent
+    , component: ComponentsComponent
     , path: "components"
     , children: []
     , data: {
     }
-});
-const THEMES_ROUTE = new BaseRoute({
+};
+const THEMES_ROUTE: Route = {
     title: "Themes"
-    , component: OverviewComponent
+    , component: ThemesComponent
     , path: "themes"
     , children: []
     , data: {
     }
-});
+};
+const PROJECT_DIMENSIONS: Route = {
+    title: "Project Dimensions"
+    , component: ProjectDimensionsComponent
+    , path: "project-dimensions"
+    , children: []
+    , data: {
+    }
+};
+const RETRO_BOARD_GAME: Route = {
+    title: "Retro Board Game"
+    , component: RetroBoardGameComponent
+    , path: "retro-board-game"
+    , children: []
+    , data: {
+    }
+};
 
 export const APP_ROUTES: Routes = [
     OVERVIEW_ROUTE
     , COMPONENTS_ROUTE
     , THEMES_ROUTE
+    , PROJECT_DIMENSIONS
+    , RETRO_BOARD_GAME
 ];

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MenuItem } from '../../core/menu/menu-item';
 import { faBars, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { shift, slide } from './animations/collapse.trigger';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { shift, slide } from './animations/collapse.trigger';
 
 @Component({
   selector: 'lgf-sidebar',
@@ -18,9 +18,9 @@ export class SidebarComponent {
     , faCaretRight: faCaretRight
   };
 
-  collapse = true;
-
-  @Input() menuItems: MenuItem[] = [];
+  @Input() collapse?: boolean = true;
+  @Input() menuItems?: MenuItem[] = [];
+  @Input() config?: {style?: string, hideCollapseButton?: boolean};
 
   constructor() {
   }

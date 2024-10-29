@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'lgf-overview',
@@ -7,13 +6,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrl: './overview.component.scss'
 })
 export class OverviewComponent implements OnInit {
-
-  title?: string;
-  routePath?: string[];
-
-  constructor(protected activatedRoute: ActivatedRoute) {
-    this.title = activatedRoute.snapshot.title;
-    this.routePath = activatedRoute.snapshot.url.map(segment => segment.path);
+  constructor() {
   }
   ngOnInit(): void {
   }

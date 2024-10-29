@@ -1,4 +1,4 @@
-import { trigger, style, transition, animate, query } from "@angular/animations";
+import { trigger, style, transition, animate, query, state } from "@angular/animations";
 
 export function fadeIn(
     config: {
@@ -23,7 +23,7 @@ export function fadeIn(
                     style(
                         {
                             opacity: config.startOpacity || 0
-                            , scale: config.startOpacity || 0.9
+                            , scale: config.startScale || 0.9
                         }
                     )
                 ]
@@ -32,7 +32,7 @@ export function fadeIn(
                     animate(config.timing || '1s', style(
                         {
                             opacity: config.startOpacity || 0
-                            , scale: config.startOpacity || 0.9
+                            , scale: config.startScale || 0.9
                         }
                     ))
                 ]
@@ -40,13 +40,43 @@ export function fadeIn(
                 , query(':enter', [
                     animate(config.timing || '1s', style(
                         {
-                            opacity: config.startOpacity || 1
-                            , scale: config.startOpacity || 1
+                            opacity: config.endOpacity || 1
+                            , scale: config.endOpacity || 1
                         }
                     ))
                 ]
                     , { optional: true })
             ])
+        ]
+    )
+}
+export function swapLeft(
+    config: {
+        startPosition?: string
+        , endPosition?: string
+        , timing?: string | number
+    } = {
+            startPosition: '100%'
+            , endPosition: '0px'
+            , timing: '1s'
+        }
+) {
+    return trigger(
+        'routeTransition'
+        , [
+            transition('* => *', [
+                query(':self', style(
+                    {
+                        width: config.endPosition || '0px'
+                    }
+                ))
+                , query(':self', animate(config.timing || '1s', style(
+                    {
+                        width: config.startPosition || '100%'
+                    }
+                )))
+            ]
+            )
         ]
     )
 }

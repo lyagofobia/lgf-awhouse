@@ -1,22 +1,24 @@
 <div class="container-fluid border-bottom">
-    <div class="row g-0">
+    <div [@routeTransition]="this.path" class="row g-0" style="position: relative;">
         <div class="col-12">
-            <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
-                <ol class="nav-item breadcrumb m-0">
-                    @for (segment of path; track $index){
-                    <li class="breadcrumb-item p-0">
-                        @if (!$last) {
-                        <a class="text-dark" [routerLink]="segment" role="link">{{segment}}</a>
-                        <fa-icon class="ps-2" [icon]="breadCrumbSeparator"></fa-icon>
-                        }
-                    </li>
-                    }
-                </ol>
-            </nav>
+            <div class="row g-0">
+                <div class="col-12">
+                    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                        <ol class="nav-item breadcrumb m-0">
+                            @for (segment of path; track $index){
+                            <li class="breadcrumb-item p-0">
+                                @if (!$last) {
+                                <a class="text-dark" [routerLink]="segment" role="link">{{segment}}</a>
+                                <fa-icon class="ps-2" [icon]="breadCrumbSeparator"></fa-icon>
+                                }
+                            </li>
+                            }
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <h1 class="overflow-hidden text-nowrap">{{title}}</h1>
         </div>
     </div>
-    <h1>{{title}}</h1>
 </div>
-<div class="container-fluid" [@routeTransition]="this.path">
-    <ng-content></ng-content>
-</div>
+<ng-content></ng-content>

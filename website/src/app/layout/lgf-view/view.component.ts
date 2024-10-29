@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { EventType, Router } from '@angular/router';
 import { faCaretRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { filter } from 'rxjs';
-import { fadeIn } from '../animations/transitions.trigger';
+import { swapLeft } from '../animations/transitions.trigger';
 
 const DEFAULT_BREAD_CRUMB_SEPARATOR = faCaretRight;
 
@@ -10,7 +8,7 @@ const DEFAULT_BREAD_CRUMB_SEPARATOR = faCaretRight;
   selector: 'lgf-view',
   templateUrl: './view.component.html',
   styleUrl: './view.component.scss',
-  animations: [fadeIn({ timing: 300 })],
+  animations: [swapLeft({ timing: '1s ease-in' })],
 })
 export class ViewComponent {
 
@@ -25,17 +23,18 @@ export class ViewComponent {
       this._breadCrumbSeparator = value;
   }
 
-  @Input() title?: string;
+  protected oldTitle?: string | undefined;
+  private _title?: string | undefined;
+  public get title(): string | undefined {
+    return this._title;
+  }
+  @Input()
+  public set title(value: string | undefined) {
+    this.oldTitle = this._title;
+    this._title = value;
+  }
   @Input() path?: string[] = [];
 
-  constructor(protected router: Router) {
-    this.router.events.pipe(filter(event => event.type == EventType.ActivationEnd)).subscribe(
-      {
-        next: (value) => {
-          this.title = value.snapshot.title;
-          this.path =  value.snapshot.url.map(segment => segment.path);
-        }
-      }
-    )
+  constructor() {
   }
 }
