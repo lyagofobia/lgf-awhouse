@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MenuItem } from '../../core/menu/menu-item';
 import { faBars, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { shift, slide } from './animations/collapse';
+import { shift, slide } from './animations/collapse.trigger';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 @Component({
