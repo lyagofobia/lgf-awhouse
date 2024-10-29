@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { fadeIn } from './layout/animations/transitions.trigger';
 import { MenuService } from './core/menu/menu.service';
-import { MenuItem } from './core/menu/menu-item.model';
+import { MenuItem } from './core/menu/menu-item';
 import { LayoutModule } from './layout/layout.module';
 
 @Component({

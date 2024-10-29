@@ -1,4 +1,4 @@
-import { MenuItem } from "../../core/menu/menu-item.model";
+import { MenuItem } from "../../core/menu/menu-item";
 import { faHouse, faPaintRoller, faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
 
 const OVERVIEW: MenuItem = {
