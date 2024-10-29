@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
 import { MenuService } from "../core/menu/menu.service";
-import { MENUS } from "./menus/menu";
-import { OverviewComponent } from "./overview/overview.component";
+import { MENUS } from "./menus/default.menu";
+import { OverviewComponent } from "./lgf-overview/overview.component";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
 
 
 
@@ -12,7 +13,8 @@ import { OverviewComponent } from "./overview/overview.component";
     OverviewComponent
   ],
   imports: [
-    RouterModule,
+    CommonModule
+    , RouterModule
   ],
   exports: [RouterModule]
 })

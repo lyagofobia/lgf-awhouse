@@ -1,22 +1,24 @@
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid g-0">
+    <div class="row g-0">
         <div class="col">
-            <div class="row">
+            <div class="row g-0">
                 <!-- top navbar-->
-                <app-header class="p-0"></app-header>
+                <lgf-header></lgf-header>
             </div>
             <div class="d-flex">
                 <!-- sidebar-->
-                <app-sidebar class="p-0" [menuItems]="menuItems"></app-sidebar>
+                <lgf-sidebar [menuItems]="menuItems"></lgf-sidebar>
                 <!-- Main section-->
-                <section class="flex-fill" [@routeTransition]="route.snapshot.data" class="col">
+                <section class="flex-fill">
+                    <lgf-view>
+                        <router-outlet></router-outlet>
+                    </lgf-view>
                     <!-- Page content-->
-                    <router-outlet></router-outlet>
                 </section>
             </div>
-            <div class="row align-self-strech">
+            <div class="row g-0 align-self-strech">
                 <!-- Page footer-->
-                <app-footer class="border-top p-0"></app-footer>
+                <lgf-footer class="border-top"></lgf-footer>
             </div>
         </div>
     </div>

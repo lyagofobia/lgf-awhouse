@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { fadeIn } from './routes/animations/transitions';
+import { fadeIn } from './layout/animations/transitions.trigger';
 import { MenuService } from './core/menu/menu.service';
-import { MenuItem } from './core/menu/MenuItem';
+import { MenuItem } from './core/menu/menu-item.model';
 import { LayoutModule } from './layout/layout.module';
 
 @Component({
@@ -11,14 +11,12 @@ import { LayoutModule } from './layout/layout.module';
   imports: [RouterOutlet, LayoutModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [fadeIn({ timing: 100 })],
+  animations: [fadeIn({ timing: 300 })],
 })
 export class AppComponent {
-  title = 'website';
-
   menuItems: MenuItem[] = [];
 
-  constructor(menu: MenuService, protected route: ActivatedRoute) {
+  constructor(menu: MenuService, protected activedRoute: ActivatedRoute) {
     this.menuItems = menu.getMenu();
   }
 

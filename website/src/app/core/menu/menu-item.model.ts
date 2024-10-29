@@ -4,7 +4,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 /**
  * Modela os items do menu.
  */
-export class MenuItem {
+export interface MenuItem {
     /**
      * Título do item. Pode ser uma string simples ou um template customizado.
      */
@@ -25,21 +25,4 @@ export class MenuItem {
      * Lista de submenus associados.
      */
     submenu?: MenuItem[];
-
-    constructor(
-        config:
-            {
-                title?: string
-                isHeading?: boolean
-                link?: string
-                icon?: IconDefinition
-                submenu?: MenuItem[]
-            }
-    ) {
-        this.title = config?.title;
-        this.isHeading = config?.isHeading;
-        this.link = config?.link;
-        this.icon = config?.icon;
-        this.submenu = config?.submenu;
-    }
 }

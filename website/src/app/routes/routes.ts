@@ -1,6 +1,6 @@
 import { Type, Provider, EnvironmentProviders } from '@angular/core';
 import { CanActivateChildFn, CanActivateFn, CanDeactivateFn, CanMatchFn, Data, LoadChildren, RedirectFunction, Resolve, ResolveData, ResolveFn, Route, Routes, RunGuardsAndResolvers, UrlMatcher } from '@angular/router';
-import { OverviewComponent } from './overview/overview.component';
+import { OverviewComponent } from './lgf-overview/overview.component';
 
 /**
  * Implementação base de Route.
@@ -71,8 +71,29 @@ const OVERVIEW_ROUTE = new BaseRoute({
     , component: OverviewComponent
     , path: "overview"
     , children: []
+    , data: {
+    }
+});
+
+const COMPONENTS_ROUTE = new BaseRoute({
+    title: "Components"
+    , component: OverviewComponent
+    , path: "components"
+    , children: []
+    , data: {
+    }
+});
+const THEMES_ROUTE = new BaseRoute({
+    title: "Themes"
+    , component: OverviewComponent
+    , path: "themes"
+    , children: []
+    , data: {
+    }
 });
 
 export const APP_ROUTES: Routes = [
     OVERVIEW_ROUTE
+    , COMPONENTS_ROUTE
+    , THEMES_ROUTE
 ];
