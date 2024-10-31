@@ -1,23 +1,42 @@
-<div class="container-fluid border-bottom">
-    <div [@routeTransition]="this.path" class="row g-0" style="position: relative;">
-        <div class="col-12">
-            <div class="row g-0">
-                <div class="col-12">
-                    <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
-                        <ol class="nav-item breadcrumb m-0">
-                            @for (segment of path; track $index){
-                            <li class="breadcrumb-item p-0">
-                                @if (!$last) {
-                                <a class="text-dark" [routerLink]="segment" role="link">{{segment}}</a>
-                                <fa-icon class="ps-2" [icon]="breadCrumbSeparator"></fa-icon>
-                                }
-                            </li>
+<div class="container-fluid d-flex border-bottom">
+    <div [@routeTransition]="path" class="d-flex">
+        <div [@slideOut]="path" class="d-flex flex-column">
+            <div class="d-flex overflow-hidden text-nowrap">
+                <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                    <ol class="nav-item breadcrumb m-0">
+                        @for (segment of path; track $index){
+                        <li class="breadcrumb-item p-0">
+                            @if (!$last) {
+                            <a class="text-dark" [routerLink]="segment" role="link">{{segment}}</a>
+                            <fa-icon class="ps-2" [icon]="breadCrumbSeparator"></fa-icon>
                             }
-                        </ol>
-                    </nav>
-                </div>
+                        </li>
+                        }
+                    </ol>
+                </nav>
             </div>
-            <h1 class="overflow-hidden text-nowrap">{{title}}</h1>
+            <div id=old-title class="d-flex">
+                <h1 class="overflow-hidden text-nowrap">{{oldTitle}}</h1>
+            </div>
+        </div>
+        <div [@slideIn]="path" class="d-flex flex-column">
+            <div class="d-flex overflow-hidden text-nowrap">
+                <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+                    <ol class="nav-item breadcrumb m-0">
+                        @for (segment of path; track $index){
+                        <li class="breadcrumb-item p-0">
+                            @if (!$last) {
+                            <a class="text-dark" [routerLink]="segment" role="link">{{segment}}</a>
+                            <fa-icon class="ps-2" [icon]="breadCrumbSeparator"></fa-icon>
+                            }
+                        </li>
+                        }
+                    </ol>
+                </nav>
+            </div>
+            <div class="d-flex">
+                <h1 class="overflow-hidden text-nowrap">{{title}}</h1>
+            </div>
         </div>
     </div>
 </div>

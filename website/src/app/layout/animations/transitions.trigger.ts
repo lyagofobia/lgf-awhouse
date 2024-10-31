@@ -1,82 +1,59 @@
-import { trigger, style, transition, animate, query, state } from "@angular/animations";
-
+import { trigger, style, transition, animate, query } from "@angular/animations";
+const DEFAULT_START_OPACITY = 0;
+const DEFAULT_END_OPACITY = 1;
+const DEFAULT_START_WIDTH = '0px';
+const DEFAULT_END_WIDTH = '100%';
+const DEFAULT_START_SCALE = 1;
+const DEFAULT_END_SCALE = 1;
+const DEFAULT_TIMING = '1s';
 export function fadeIn(
-    config: {
+    selector: string
+    , config: {
         startOpacity?: number
         , startScale?: number
         , endOpacity?: number
         , endScale?: number
         , timing?: string | number
     } = {
-            startOpacity: 0
-            , startScale: 0.9
-            , endOpacity: 1
-            , endScale: 1
-            , timing: '1s'
+            startOpacity: DEFAULT_START_OPACITY
+            , startScale: DEFAULT_START_SCALE
+            , endOpacity: DEFAULT_END_OPACITY
+            , endScale: DEFAULT_END_SCALE
+            , timing: DEFAULT_TIMING
         }
 ) {
     return trigger(
-        'routeTransition'
+        selector
         , [
             transition('* => *', [
                 query(':enter', [
                     style(
                         {
-                            opacity: config.startOpacity || 0
-                            , scale: config.startScale || 0.9
+                            opacity: config.startOpacity || DEFAULT_START_OPACITY
+                            , scale: config.startScale || DEFAULT_START_SCALE
                         }
                     )
                 ]
                     , { optional: true })
                 , query(':leave', [
-                    animate(config.timing || '1s', style(
+                    animate(config.timing || DEFAULT_TIMING, style(
                         {
-                            opacity: config.startOpacity || 0
-                            , scale: config.startScale || 0.9
+                            opacity: config.startOpacity || DEFAULT_START_OPACITY
+                            , scale: config.startScale || DEFAULT_START_SCALE
                         }
                     ))
                 ]
                     , { optional: true })
                 , query(':enter', [
-                    animate(config.timing || '1s', style(
+                    animate(config.timing || DEFAULT_TIMING, style(
                         {
-                            opacity: config.endOpacity || 1
-                            , scale: config.endOpacity || 1
+                            opacity: config.endOpacity || DEFAULT_END_OPACITY
+                            , scale: config.endScale || DEFAULT_END_SCALE
                         }
                     ))
                 ]
                     , { optional: true })
             ])
-        ]
-    )
-}
-export function swapLeft(
-    config: {
-        startPosition?: string
-        , endPosition?: string
-        , timing?: string | number
-    } = {
-            startPosition: '100%'
-            , endPosition: '0px'
-            , timing: '1s'
-        }
-) {
-    return trigger(
-        'routeTransition'
-        , [
-            transition('* => *', [
-                query(':self', style(
-                    {
-                        width: config.endPosition || '0px'
-                    }
-                ))
-                , query(':self', animate(config.timing || '1s', style(
-                    {
-                        width: config.startPosition || '100%'
-                    }
-                )))
-            ]
-            )
         ]
     )
 }

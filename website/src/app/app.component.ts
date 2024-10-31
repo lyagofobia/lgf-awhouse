@@ -12,7 +12,7 @@ import { filter } from 'rxjs';
   imports: [RouterOutlet, LayoutModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [fadeIn({ timing: 300 })]
+  animations: [fadeIn('routeTransition', { timing: 300 })]
 })
 export class AppComponent {
   menuItems: MenuItem[] = [];
