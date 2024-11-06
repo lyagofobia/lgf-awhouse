@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex border-bottom">
     <div [@routeTransition]="path" class="d-flex">
-        <div [@slideOut]="path" class="d-flex flex-column">
+        <div [@collapseOut]="path" class="d-flex flex-column">
             <div class="d-flex overflow-hidden text-nowrap">
                 <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
                     <ol class="nav-item breadcrumb m-0">
@@ -19,7 +19,7 @@
                 <h1 class="overflow-hidden text-nowrap">{{oldTitle}}</h1>
             </div>
         </div>
-        <div [@slideIn]="path" class="d-flex flex-column">
+        <div [@collapseIn]="path" class="d-flex flex-column">
             <div class="d-flex overflow-hidden text-nowrap">
                 <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
                     <ol class="nav-item breadcrumb m-0">

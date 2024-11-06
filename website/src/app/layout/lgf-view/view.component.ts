@@ -1,16 +1,21 @@
 import { Component, Input } from '@angular/core';
 import { faCaretRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { slide, swap } from './animations/header-change.trigger';
-import { AnimationEvent } from '@angular/animations';
+import { layoutViewSequenceCollapse } from '../../animations/route-transitions/layout-view.triggers';
 @Component({
   selector: 'lgf-view',
   templateUrl: './view.component.html',
   styleUrl: './view.component.scss',
-  animations: [
-    swap('routeTransition')
-    , slide('slideIn', { timing: '500ms 200ms'})
-    , slide('slideOut', { timing: '100ms', startWidth: '*', endWidth: '0px' })
-  ],
+  animations: layoutViewSequenceCollapse('routeTransition',
+    {
+      selector: 'collapseOut'
+      , config: { timings: '100ms', startWidth: '*', endWidth: '0px' }
+    }
+    ,
+    {
+      selector: 'collapseIn'
+      , config: { timings: '500ms 150ms' }
+    }
+  )
 })
 export class ViewComponent {
 

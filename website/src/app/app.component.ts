@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { EventType, Router, RouterOutlet } from '@angular/router';
-import { fadeIn } from './layout/animations/transitions.trigger';
 import { MenuService } from './core/menu/menu.service';
 import { MenuItem } from './core/menu/menu-item';
 import { LayoutModule } from './layout/layout.module';
 import { filter } from 'rxjs';
+import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/layout-view.triggers';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { filter } from 'rxjs';
   imports: [RouterOutlet, LayoutModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [fadeIn('routeTransition', { timing: 300 })]
+  animations: [layoutViewFadeAndZoomTrigger('routeTransition', { timings: '150ms' })]
 })
 export class AppComponent {
   menuItems: MenuItem[] = [];
