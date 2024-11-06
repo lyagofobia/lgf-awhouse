@@ -1,5 +1,5 @@
-import { AnimationsConfigs } from "../animations-config";
-import { Defaults } from "../defaults";
+import { AnimationsConfigs } from "./animations-config";
+import { Defaults } from "../libs/defaults.lib";
 
 export class FadeAndZoom implements AnimationsConfigs.FadeAndZoomConfig {
     startOpacity: number = Defaults.START_OPACITY;

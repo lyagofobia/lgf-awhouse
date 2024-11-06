@@ -1,6 +1,6 @@
 import { trigger, style, transition, state, useAnimation } from "@angular/animations";
-import { Animations } from "../animations";
-import { XCollapse } from "../configs/x-collapse";
+import { Animations } from "../libs/animations.lib";
+import { XCollapse } from "../configs/x-collapse.config";
 
 export namespace OpenClosedTriggers {
     export function xCollapseTrigger(

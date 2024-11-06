@@ -1,5 +1,5 @@
-import { AnimationDefaults } from "../animation-defaults";
-import { LgfTriggers } from "../../../../../lgf-angulations/animation-triggers"
+import { AnimationDefaults } from "../animation-defaults.lib";
+import { LgfTriggers } from "../../../../../lgf-angulations/libs/animation-triggers.lib"
 
 
 export function layoutViewFadeAndZoomTrigger(

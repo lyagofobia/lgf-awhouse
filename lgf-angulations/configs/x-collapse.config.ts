@@ -1,5 +1,5 @@
-import { AnimationsConfigs } from "../animations-config";
-import { Defaults } from "../defaults";
+import { AnimationsConfigs } from "./animations-config";
+import { Defaults } from "../libs/defaults.lib";
 
 export class XCollapse implements AnimationsConfigs.XCollapseConfig {
     startWidth: string = Defaults.START_WIDTH;

@@ -1,6 +1,6 @@
 import { trigger, state, style, transition, useAnimation } from "@angular/animations";
-import { Animations } from "../animations";
-import { XCollapse } from "../configs/x-collapse";
+import { Animations } from "../libs/animations.lib";
+import { XCollapse } from "../configs/x-collapse.config";
 
 export namespace StartUpTriggers {
     export function xCollapseTrigger(

@@ -1,8 +1,7 @@
 import { trigger, style, transition, query, useAnimation } from "@angular/animations";
-import { Defaults } from "../defaults";
-import { Animations } from "../animations";
-import { AnimationsConfigs } from "../animations-config";
-import { FadeAndZoom } from "../configs/fade-and-zoom";
+import { Defaults } from "../libs/defaults.lib";
+import { Animations } from "../libs/animations.lib";
+import { FadeAndZoom } from "../configs/fade-and-zoom.config";
 
 export namespace EnterLeaveTriggers {
     export function fadeAndZoomTrigger(

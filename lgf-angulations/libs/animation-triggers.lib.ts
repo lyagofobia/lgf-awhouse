@@ -1,11 +1,11 @@
-import { Defaults } from "./defaults";
-import { AnimationsConfigs } from "./animations-config";
-import { StartUpTriggers } from "./triggers/startup.triggers";
-import { SequenceTriggers } from "./triggers/sequence.triggers";
-import { EnterLeaveTriggers } from "./triggers/enter-leave.triggers";
-import { OpenClosedTriggers } from "./triggers/open-closed.triggers";
-import { XCollapse } from "./configs/x-collapse";
-import { FadeAndZoom } from "./configs/fade-and-zoom";
+import { Defaults } from "./defaults.lib";
+import { AnimationsConfigs } from "../configs/animations-config";
+import { StartUpTriggers } from "../triggers/startup.triggers";
+import { SequenceTriggers } from "../triggers/sequence.triggers";
+import { EnterLeaveTriggers } from "../triggers/enter-leave.triggers";
+import { OpenClosedTriggers } from "../triggers/open-closed.triggers";
+import { XCollapse } from "../configs/x-collapse.config";
+import { FadeAndZoom } from "../configs/fade-and-zoom.config";
 
 export namespace LgfTriggers {
     /**
