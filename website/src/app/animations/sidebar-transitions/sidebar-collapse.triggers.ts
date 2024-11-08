@@ -17,3 +17,21 @@ export function sideBarCollapse(
 ) {
     return LgfTriggers.openClosedXCollapse(selector, config);
 }
+
+export function sideBarSectionCollapse(
+    selector: string
+    , config:
+        {
+            startHeight?: string
+            , endHeight?: string
+            , timings?: string | number
+        } = {
+            startHeight: AnimationDefaults.START_HEIGHT
+            , endHeight: AnimationDefaults.END_HEIGHT
+            , timings: AnimationDefaults.TIMING
+        }
+) {
+    return [
+        LgfTriggers.openClosedYCollapse(selector, config)
+    ];
+}

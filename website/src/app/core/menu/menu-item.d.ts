@@ -2,27 +2,31 @@ import { TemplateRef } from "@angular/core";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 /**
- * Modela os items do menu.
+ * Defines a menu item.
  */
 export interface MenuItem {
     /**
-     * Título do item. Pode ser uma string simples ou um template customizado.
+     * Item's title. Can be a string or a custom template reference.
      */
     title?: string | TemplateRef<any>;
     /**
-     * Indica se o item é um cabeçalho.
+     * Flags if a item is a header.
      */
     isHeading?: boolean;
     /**
-     * Link da rota que o item deve redirecionar.
+     * Flags if a item has its submenu collapsed.
+     */
+    isCollapsed?: boolean;
+    /**
+     * Routing link.
      */
     link?: string;
     /**
-     * Classe CSS do ícone do item. 
+     * Item's Icon.
      */
     icon?: IconDefinition;
     /**
-     * Lista de submenus associados.
+     * Item's submenu.
      */
     submenu?: MenuItem[];
 }
