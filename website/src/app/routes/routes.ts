@@ -1,13 +1,14 @@
-import { ComponentsComponent } from './lgf-components/components.component';
-import { OverviewComponent } from './lgf-overview/overview.component';
+import { LgfComponentsComponent } from './lgf-components/components.component';
+import { LgfOverviewComponent } from './lgf-overview/overview.component';
 import { Route, Routes } from '@angular/router';
-import { ThemesComponent } from './lgf-themes/themes.component';
-import { ProjectDimensionsComponent } from './lgf-project-dimensions/project-dimensions.component';
-import { RetroBoardGameComponent } from './lgf-retro-board-game/retro-board-game.component';
+import { LgfThemesComponent } from './lgf-themes/themes.component';
+import { LgfProjectDimensionsComponent } from './lgf-project-dimensions/project-dimensions.component';
+import { LgfRetroBoardGameComponent } from './lgf-retro-board-game/retro-board-game.component';
+import { LgfAngulationsComponent } from './lgf-angulations/lgf-angulations.component';
 
 const OVERVIEW_ROUTE: Route = {
     title: "Overview"
-    , component: OverviewComponent
+    , component: LgfOverviewComponent
     , path: "overview"
     , children: []
     , data: {
@@ -15,15 +16,23 @@ const OVERVIEW_ROUTE: Route = {
 };
 const COMPONENTS_ROUTE: Route = {
     title: "Components"
-    , component: ComponentsComponent
+    , component: LgfComponentsComponent
     , path: "components"
+    , children: []
+    , data: {
+    }
+};
+const ANIMATIONS_ROUTE: Route = {
+    title: "Animations"
+    , component: LgfAngulationsComponent
+    , path: "animations"
     , children: []
     , data: {
     }
 };
 const THEMES_ROUTE: Route = {
     title: "Themes"
-    , component: ThemesComponent
+    , component: LgfThemesComponent
     , path: "themes"
     , children: []
     , data: {
@@ -31,7 +40,7 @@ const THEMES_ROUTE: Route = {
 };
 const PROJECT_DIMENSIONS: Route = {
     title: "Project Dimensions"
-    , component: ProjectDimensionsComponent
+    , component: LgfProjectDimensionsComponent
     , path: "project-dimensions"
     , children: []
     , data: {
@@ -39,7 +48,7 @@ const PROJECT_DIMENSIONS: Route = {
 };
 const RETRO_BOARD_GAME: Route = {
     title: "Retro Board Game"
-    , component: RetroBoardGameComponent
+    , component: LgfRetroBoardGameComponent
     , path: "retro-board-game"
     , children: []
     , data: {
@@ -49,6 +58,7 @@ const RETRO_BOARD_GAME: Route = {
 export const APP_ROUTES: Routes = [
     OVERVIEW_ROUTE
     , COMPONENTS_ROUTE
+    , ANIMATIONS_ROUTE
     , THEMES_ROUTE
     , PROJECT_DIMENSIONS
     , RETRO_BOARD_GAME

@@ -1,36 +1,46 @@
 import { MenuItem } from "../../core/menu/menu-item";
-import { faGamepad, faMortarBoard, faPaintRoller, faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
+import * as FontAwesome from "@fortawesome/free-solid-svg-icons";
+import * as FontAwesomeBrands from "@fortawesome/free-brands-svg-icons";
+
 
 const COMPONENTS: MenuItem = {
     title: 'Components'
-    , icon: faPuzzlePiece
+    , icon: FontAwesome.faPuzzlePiece
     , link: '/components'
 };
 const THEMES: MenuItem = {
     title: 'Themes'
-    , icon: faPaintRoller
+    , icon: FontAwesome.faPaintRoller
     , link: '/themes'
 };
-const LGF_BOOTSTRAP: MenuItem = {
-    title: 'lgf-bootstrap'
+const ANIMATIONS: MenuItem = {
+    title: 'Animations'
+    , icon: FontAwesome.faPlayCircle
+    , link: '/animations'
+};
+const ANGULAR: MenuItem = {
+    title: 'Angular'
+    , icon: FontAwesomeBrands.faAngular
     , isHeading: true
     , submenu: [
         COMPONENTS
+        , ANIMATIONS
         , THEMES
     ]
 };
 const PROJECT_DIMENSIONS: MenuItem = {
     title: 'Project Dimensions'
-    , icon: faGamepad
+    , icon: FontAwesome.faDiagramNext
     , link: '/project-dimensions'
 };
 const RETRO_BOARD_GAME: MenuItem = {
     title: 'Retro Board Game'
-    , icon: faMortarBoard
+    , icon: FontAwesome.faChessBoard
     , link: '/retro-board-game'
 };
 const LYAGOFOBIA_GAMES: MenuItem = {
     title: 'Lyagofobia Games'
+    , icon: FontAwesome.faGamepad
     , isHeading: true
     , submenu: [
         PROJECT_DIMENSIONS
@@ -39,6 +49,6 @@ const LYAGOFOBIA_GAMES: MenuItem = {
 };
 
 export const MENUS = [
-    LGF_BOOTSTRAP
+    ANGULAR
     , LYAGOFOBIA_GAMES
 ];

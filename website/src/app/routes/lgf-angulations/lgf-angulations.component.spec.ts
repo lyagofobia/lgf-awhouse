@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LgfThemesComponent } from './themes.component';
+import { LgfAngulationsComponent } from './lgf-angulations.component';
 
-describe('ThemesComponent', () => {
-  let component: LgfThemesComponent;
-  let fixture: ComponentFixture<LgfThemesComponent>;
+describe('LgfAngulationsComponent', () => {
+  let component: LgfAngulationsComponent;
+  let fixture: ComponentFixture<LgfAngulationsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LgfThemesComponent]
+      imports: [LgfAngulationsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LgfThemesComponent);
+    fixture = TestBed.createComponent(LgfAngulationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

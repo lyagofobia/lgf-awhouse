@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './retro-board-game.component.html',
   styleUrl: './retro-board-game.component.scss'
 })
-export class RetroBoardGameComponent {
+export class LgfRetroBoardGameComponent {
 
 }

@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './project-dimensions.component.html',
   styleUrl: './project-dimensions.component.scss'
 })
-export class ProjectDimensionsComponent {
+export class LgfProjectDimensionsComponent {
 
 }

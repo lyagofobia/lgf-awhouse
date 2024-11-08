@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectDimensionsComponent } from './project-dimensions.component';
+import { LgfProjectDimensionsComponent } from './project-dimensions.component';
 
 describe('ProjectDimensionsComponent', () => {
-  let component: ProjectDimensionsComponent;
-  let fixture: ComponentFixture<ProjectDimensionsComponent>;
+  let component: LgfProjectDimensionsComponent;
+  let fixture: ComponentFixture<LgfProjectDimensionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProjectDimensionsComponent]
+      imports: [LgfProjectDimensionsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProjectDimensionsComponent);
+    fixture = TestBed.createComponent(LgfProjectDimensionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
