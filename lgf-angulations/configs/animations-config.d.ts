@@ -66,4 +66,21 @@ export namespace AnimationsConfigs {
          */
         endWidth?: string
     }
+    /**
+     * Defines a set of configuration params for the Y-Axis Collapse effect.
+     * Use the defined params to customize the effect.
+     * 
+     */
+    export interface YCollapseConfig extends BaseConfig {
+        /**
+         * Height, as in the CSS property `height`, on animation start.
+         * The default value is '0%'.
+         */
+        startHeight?: string
+        /**
+         * Height, as in the CSS property `height`, on animation end.
+         * The default value is '100%'.
+         */
+        endHeight?: string
+    }
 }

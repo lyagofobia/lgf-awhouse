@@ -1,6 +1,7 @@
 import { trigger, style, transition, state, useAnimation } from "@angular/animations";
 import { Animations } from "../libs/animations.lib";
 import { XCollapse } from "../configs/x-collapse.config";
+import { YCollapse } from "../configs/y-collapse.config";
 
 export namespace OpenClosedTriggers {
     export function xCollapseTrigger(
@@ -39,6 +40,50 @@ export namespace OpenClosedTriggers {
                             params: {
                                 startWidth: config.endWidth
                                 , endWidth: config.startWidth
+                                , timings: config.timings
+                            }
+                        }
+                    )
+                ])
+            ]
+        )
+    }
+    export function yCollapseTrigger(
+        selector: string
+        , config: YCollapse
+    ) {
+        return trigger(
+            selector
+            , [
+                state('open', style(
+                    {
+                        height: config.startHeight
+                    }
+                )
+                ),
+                state('closed', style(
+                    {
+                        height: config.endHeight
+                    }
+                )
+                ),
+                transition('open => closed', [
+                    useAnimation(Animations.Y_COLLAPSE_ANIMATION
+                        , {
+                            params: {
+                                startHeight: config.startHeight
+                                , endHeight: config.endHeight
+                                , timings: config.timings
+                            }
+                        }
+                    )
+                ]),
+                transition('closed => open', [
+                    useAnimation(Animations.Y_COLLAPSE_ANIMATION
+                        , {
+                            params: {
+                                startHeight: config.endHeight
+                                , endHeight: config.startHeight
                                 , timings: config.timings
                             }
                         }

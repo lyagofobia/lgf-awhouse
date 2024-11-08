@@ -44,4 +44,18 @@ export namespace Animations {
             ))
         ]
     )
+    export const Y_COLLAPSE_ANIMATION = animation(
+        [
+            style(
+                {
+                    height: '{{ startHeight }}'
+                }
+            )
+            , animate('{{ timings }}', style(
+                {
+                    height: '{{ endHeight }}'
+                }
+            ))
+        ]
+    )
 }

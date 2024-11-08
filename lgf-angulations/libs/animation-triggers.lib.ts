@@ -5,6 +5,7 @@ import { SequenceTriggers } from "../triggers/sequence.triggers";
 import { EnterLeaveTriggers } from "../triggers/enter-leave.triggers";
 import { OpenClosedTriggers } from "../triggers/open-closed.triggers";
 import { XCollapse } from "../configs/x-collapse.config";
+import { YCollapse } from "../configs/y-collapse.config";
 import { FadeAndZoom } from "../configs/fade-and-zoom.config";
 
 export namespace LgfTriggers {
@@ -193,6 +194,63 @@ export namespace LgfTriggers {
     ) {
         const xCollapse = new XCollapse(config);
         return OpenClosedTriggers.xCollapseTrigger(selector, xCollapse);
+    }
+    /**
+     * Retrieves an implementation of Y-Axis Collapse animation on open-close state changes.
+     * @param selector Trigger name on the animated parent element.
+     * @param config Animation configuration defined by [`YCollapseConfig`](./animations-config.d.ts).
+     * Use it to customize the animation.
+     * @returns Animation Trigger ready to be declared on an Angular Component.
+     * 
+     * @usageNotes
+     * Call this animation trigger in the `animations` section of `@Component` metadata.
+     * You can customize it via `config`, by setting new values to the defined config params.
+     * In the template, reference the trigger by name and bind it to a trigger expression that
+     * evaluates to a defined animation state, using the following format:
+     *
+     * `[@triggerName]="expression"`
+     * ### Usage Example
+     *
+     * The following example calls the animation trigger reference by accessing the
+     * `LgfTriggers` namespace and assigning a trigger name, a timing configuration of
+     * 200 miliseconds.
+     *
+     * ```typescript
+     * @Component({
+     *   selector: "my-component",
+     *   templateUrl: "my-component-tpl.html",
+     *   animations: [
+     *     LgfTriggers.openCloseYCollapse('myAnimationTrigger', {timings:'200ms'})
+     *   ]
+     * })
+     * class MyComponent {
+     *   myTriggerExpression = "something";
+     * }
+     * ```
+     * The template associated with this component makes use of the defined trigger
+     * by binding to an element within its template code. The expression sets the two
+     * base states to this animation: 'open' and 'closed'.
+     *
+     * ```html
+     * <!-- Parent div setted with `myAnimationTrigger` -->
+     * <div [@myAnimationTrigger]="myTriggerExpression ? 'open' : 'closed'">...</div>
+     * <!-- End of parent div -->
+     * ```
+     * Whenever there is a change in the defined state, the animation will toggle between the defined `start` and `end`
+     * parameters.
+     * 
+     * This is most useful to create toggle effects.
+     */
+    export function openClosedYCollapse(
+        selector: string
+        , config: AnimationsConfigs.YCollapseConfig = {
+            startHeight: Defaults.START_HEIGHT
+            , endHeight: Defaults.END_HEIGHT
+            , timings: Defaults.TIMING
+        }
+    ) {
+        const yCollapse = new YCollapse(config);
+        return OpenClosedTriggers.yCollapseTrigger(selector, yCollapse);
     }
     /**
      * Retrieves an implementation of a sequential animation given the selectors 
