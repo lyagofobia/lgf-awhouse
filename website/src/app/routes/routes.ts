@@ -4,7 +4,7 @@ import { Route, Routes } from '@angular/router';
 import { LgfThemesComponent } from './lgf-themes/themes.component';
 import { LgfProjectDimensionsComponent } from './lgf-project-dimensions/project-dimensions.component';
 import { LgfRetroBoardGameComponent } from './lgf-retro-board-game/retro-board-game.component';
-import { LgfAngulationsComponent } from './lgf-angulations/lgf-angulations.component';
+import { LgfCinemaComponent } from './lgf-cinema/lgf-cinema.component';
 
 const OVERVIEW_ROUTE: Route = {
     title: "Overview"
@@ -24,7 +24,7 @@ const COMPONENTS_ROUTE: Route = {
 };
 const ANIMATIONS_ROUTE: Route = {
     title: "Animations"
-    , component: LgfAngulationsComponent
+    , component: LgfCinemaComponent
     , path: "animations"
     , children: []
     , data: {

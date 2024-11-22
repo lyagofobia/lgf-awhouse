@@ -1,5 +1,5 @@
 
-import { LgfTriggers } from "../../../../../lgf-angulations/libs/animation-triggers.lib";
+import { LgfTriggers } from "../../../../../lgf-cinema/libs/animation-triggers.lib";
 import { AnimationDefaults } from "../animation-defaults.lib";
 
 export function sideBarCollapse(
