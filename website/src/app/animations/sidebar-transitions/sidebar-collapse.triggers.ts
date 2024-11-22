@@ -24,14 +24,16 @@ export function sideBarSectionCollapse(
         {
             startHeight?: string
             , endHeight?: string
+            , startScale?: number
+            , endScale?: number
             , timings?: string | number
         } = {
             startHeight: AnimationDefaults.START_HEIGHT
             , endHeight: AnimationDefaults.END_HEIGHT
+            , startScale: AnimationDefaults.START_SCALE
+            , endScale: AnimationDefaults.END_SCALE
             , timings: AnimationDefaults.TIMING
         }
 ) {
-    return [
-        LgfTriggers.openClosedYCollapse(selector, config)
-    ];
+    return LgfTriggers.openClosedYCollapseAndZoom(selector, config);
 }

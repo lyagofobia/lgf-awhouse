@@ -12,23 +12,10 @@ export class MenuService {
   }
 
   /**
-   * Adiciona os items ao menu.
-   * @param items Items do menu.
+   * Add items to menu
+   * @param items items.
    */
   addMenu(items: MenuItem[]) {
-    items.forEach((item) => {
-      // if (!this.menuItems.includes(item))
-      this.menuItems.push(item);
-    });
+    this.menuItems = items.map(item => item);
   }
-
-  /**
-   * Obtém o menu.
-   * @returns Array contendo os itens menu.
-   */
-  getMenu() {
-    return this.menuItems;
-  }
-
-
 }

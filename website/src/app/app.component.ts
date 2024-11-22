@@ -21,7 +21,7 @@ export class AppComponent {
   path?: string[] = [];
 
   constructor(menu: MenuService, protected router: Router) {
-    this.menuItems = menu.getMenu();
+    this.menuItems = menu.menuItems;
     this.router.events.pipe(filter(event => event.type == EventType.ActivationEnd)).subscribe(
       {
         next: (value) => {

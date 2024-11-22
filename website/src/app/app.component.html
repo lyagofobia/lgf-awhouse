@@ -11,7 +11,7 @@
                 <!-- Main section-->
                 <section class="flex-fill">
                     <lgf-view [title]="this.title" [path]="this.path">
-                        <div class="position-fixed" [@routeTransition]="this.path">
+                        <div [@routeTransition]="this.path">
                             <router-outlet></router-outlet>
                         </div>
                     </lgf-view>

@@ -9,8 +9,8 @@ import { sideBarCollapse, sideBarSectionCollapse } from '../../animations/sideba
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   animations: [
-    sideBarCollapse('barCollapse', { startWidth: '280px', endWidth: '60px', timings: '250ms ease-out' })
-    , sideBarSectionCollapse('sectionCollapse', { startHeight: '*', endHeight: '0px', timings: '250ms ease-out' })
+    sideBarSectionCollapse('sectionCollapse', { startHeight: '0px', endHeight: '*', timings: '150ms ease-out' })
+    , sideBarCollapse('barCollapse', { startWidth: '280px', endWidth: '60px', timings: '250ms ease-out' })
   ],
   providers: [provideAnimations()]
 })

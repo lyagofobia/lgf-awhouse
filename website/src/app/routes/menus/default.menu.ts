@@ -24,8 +24,23 @@ const ANGULAR: MenuItem = {
     , isHeading: true
     , submenu: [
         COMPONENTS
-        , ANIMATIONS
-        , THEMES
+    ]
+};
+const ANGULAR_3: MenuItem = {
+    title: 'Angular 3'
+    , icon: FontAwesomeBrands.faAngular
+    , isHeading: true
+    , submenu: [
+        THEMES
+    ]
+};
+const ANGULAR_2: MenuItem = {
+    title: 'Angular 2'
+    , icon: FontAwesomeBrands.faAngular
+    , isHeading: true
+    , submenu: [
+        ANIMATIONS
+        , ANGULAR_3
     ]
 };
 const PROJECT_DIMENSIONS: MenuItem = {
@@ -48,7 +63,8 @@ const LYAGOFOBIA_GAMES: MenuItem = {
     ]
 };
 
-export const MENUS = [
+export const DEFAULT_MENU = [
     ANGULAR
+    , ANGULAR_2
     , LYAGOFOBIA_GAMES
 ];
