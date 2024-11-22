@@ -83,4 +83,37 @@ export namespace AnimationsConfigs {
          */
         endHeight?: string
     }
+    /**
+     * Defines a set of configuration params for the Zoom effect.
+     * Use the defined params to customize the effect.
+     * 
+     */
+    export interface ZommConfig extends BaseConfig {
+        /**
+         * Scale, as in the CSS property `scale`, on animation start.
+         * The default value is 1.
+         */
+        startScale?: number
+        /**
+         * Scale, as in the CSS property `scale`, on animation end.
+         * The default value is 0.
+         */
+        endScale?: number
+    }
+    /**
+     * Defines a set of configuration params for the Y-Axis Collapse and Zoom effect.
+     * Use the defined params to customize the effect.
+     */
+    export interface YCollapseAndZoom extends YCollapseConfig {
+        /**
+         * Scale, as in the CSS property `scale`, on animation start.
+         * The default value is 1.
+         */
+        startScale?: number
+        /**
+         * Scale, as in the CSS property `scale`, on animation end.
+         * The default value is 0.
+         */
+        endScale?: number
+    }
 }
