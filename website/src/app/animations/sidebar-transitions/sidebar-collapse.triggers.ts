@@ -1,7 +1,6 @@
 
 import { AnimationDefaults } from "../animation-defaults.lib";
-import { LgfTriggers } from "../../../../../lgf-angular/dist/lgf-angular-cinema"
-
+import { LgfTriggers } from 'lgf-angular-cinema'
 
 export function sideBarCollapse(
     selector: string

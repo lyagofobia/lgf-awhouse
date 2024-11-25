@@ -8,6 +8,17 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "lgf-angular-cinema": [
+        "./dist/lgf-angular-cinema"
+      ],
+      "lgf-angular-furnishings": [
+        "./dist/lgf-angular-furnishings"
+      ],
+      "lgf-angular-hearth": [
+        "./dist/lgf-angular-hearth"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,

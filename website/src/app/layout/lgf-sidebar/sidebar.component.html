@@ -1,13 +1,13 @@
 <!-- START Sidebar (left)-->
 <nav class="border-end" [style]="config?.style" [@barCollapse]="xCollapse ? 'open' : 'closed'">
-    @if (!config?.hideCollapseButton) {
     <div class="d-flex flex-row-reverse">
         <button class="btn btn-light bg-transparent border-0" type="button" (click)="xCollapse=!xCollapse">
             <fa-icon class="p-2" [icon]="icons.faBars" size="lg">
             </fa-icon>
         </button>
     </div>
-    }
+    <lgf-furnishing-list [listItems]="menuItems">
+    </lgf-furnishing-list>
     <!-- START sidebar nav-->
     <ul [@sectionCollapse]="yCollapse ? 'open' : 'closed'" class="list-group">
         @for (item of menuItems; track $index) {

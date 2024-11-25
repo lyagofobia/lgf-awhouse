@@ -6,10 +6,7 @@ import { HeaderComponent } from "./lgf-header/header.component";
 import { SidebarComponent } from "./lgf-sidebar/sidebar.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ViewComponent } from "./lgf-view/view.component";
-
-
-
-
+import { LgfAngularFurnishingsModule } from 'lgf-angular-furnishings'
 @NgModule({
   declarations: [
     HeaderComponent
@@ -19,7 +16,8 @@ import { ViewComponent } from "./lgf-view/view.component";
   ],
   imports: [
     RoutesModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    LgfAngularFurnishingsModule
   ],
   exports: [
     CommonModule
