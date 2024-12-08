@@ -12,7 +12,7 @@ import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/lay
   imports: [RouterOutlet, LayoutModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  animations: [layoutViewFadeAndZoomTrigger('routeTransition', { timings: '150ms' })]
+  animations: [layoutViewFadeAndZoomTrigger('routeTransition')]
 })
 export class AppComponent {
   /**

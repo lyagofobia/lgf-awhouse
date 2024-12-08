@@ -3,7 +3,7 @@ export namespace AnimationDefaults {
     export const LAYOUT_VIEW_OPACITY_END = 1;
     export const LAYOUT_VIEW_SCALE_START = 1;
     export const LAYOUT_VIEW_SCALE_END = 1;
-    export const LAYOUT_VIEW_TIMINGS = '1s';
+    export const LAYOUT_VIEW_TIMINGS = '150ms';
     export const MENU_COLLAPSE_START = '*';
     export const MENU_COLLAPSE_END = '0px';
     export const MENU_ZOOM_START = 1;
