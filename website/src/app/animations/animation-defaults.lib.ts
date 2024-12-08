@@ -8,7 +8,7 @@ export namespace AnimationDefaults {
     export const MENU_COLLAPSE_END = '0px';
     export const MENU_ZOOM_START = 1;
     export const MENU_ZOOM_END = 0;
-    export const MENU_TIMINGS = '150ms ease-out';
+    export const MENU_TIMINGS = '150ms 10ms ease-out';
     export const MENU_OPACITY_START = 1;
     export const MENU_OPACITY_END = 0;
     export const SIDEBAR_COLLAPSE_WIDTH_START = '280px';

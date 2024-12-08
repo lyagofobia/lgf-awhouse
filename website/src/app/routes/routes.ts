@@ -9,7 +9,7 @@ import { LgfCinemaComponent } from './lgf-cinema/lgf-cinema.component';
 const OVERVIEW_ROUTE: Route = {
     title: "Overview"
     , component: LgfOverviewComponent
-    , path: "overview"
+    , path: ""
     , children: []
     , data: {
     }, 
