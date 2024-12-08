@@ -1,4 +1,4 @@
-<ul class="list-group" >
+<ul class="list-group">
     @for (item of listItems; track $index) {
     @if(item.isHeading) {
     <ng-container [ngTemplateOutlet]="listHeadingTmp || deafultListHeadingTmp"
@@ -16,8 +16,10 @@
         style="border-radius: 0%;" (click)="item.isCollapsed=!item.isCollapsed">
         <p class="text-truncate mb-0">{{item.title}}</p>
     </div>
+    @if (!item.isCollapsed) {
     <lgf-furnishing-list [listItems]="item.submenu" [collapse]="item.isCollapsed">
     </lgf-furnishing-list>
+    }
 </ng-template>
 
 <ng-template #deafultListItemTmp let-item="listItem">

@@ -4,7 +4,7 @@ import { MenuService } from './core/menu/menu.service';
 import { MenuItem } from './core/menu/menu-item';
 import { LayoutModule } from './layout/layout.module';
 import { filter } from 'rxjs';
-import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/layout-view.triggers';
+import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/layout-view.trigger';
 
 @Component({
   selector: 'app-root',

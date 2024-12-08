@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faCaretRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { layoutViewSequenceCollapse } from '../../animations/route-transitions/layout-view.triggers';
+import { layoutViewSequenceCollapse } from '../../animations/route-transitions/layout-view.trigger';
 @Component({
   selector: 'lgf-view',
   templateUrl: './view.component.html',

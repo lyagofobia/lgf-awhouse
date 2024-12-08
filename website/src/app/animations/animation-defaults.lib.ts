@@ -8,6 +8,8 @@ export namespace AnimationDefaults {
     export const END_WIDTH = '100%';
     export const START_HEIGHT = '0px';
     export const END_HEIGHT = '100%';
+    export const LEFT_TRANSLATE = '-100%';
+    export const RIGHT_TRANSLATE = '100%';
 }
 
 
