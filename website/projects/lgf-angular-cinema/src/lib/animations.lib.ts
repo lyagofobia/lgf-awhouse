@@ -58,4 +58,13 @@ export namespace Animations {
             ))
         ]
     )
+    export const TRANSLATE_ANIMATION = animation(
+        [
+            animate('{{ timings }}', style(
+                {
+                    transform: 'translate({{ translateX }}, {{ translateY }})'
+                }
+            ))
+        ]
+    )
 }

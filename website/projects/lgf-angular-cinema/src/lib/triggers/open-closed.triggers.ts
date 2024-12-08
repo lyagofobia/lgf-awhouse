@@ -1,9 +1,10 @@
-import { trigger, style, transition, state, useAnimation } from "@angular/animations";
+import { trigger, style, transition, state, useAnimation, group } from "@angular/animations";
 import { Animations } from "../../lib/animations.lib";
 import { XCollapse } from "../configs/x-collapse.config";
 import { YCollapse } from "../configs/y-collapse.config";
 import { Zoom } from "../configs/zoom.config";
 import { YCollapseAndZoom } from "../configs/y-collapse-and-zoom.config";
+import { YCollapseAndFade } from "../configs/y-collapse-and-fade-away.config";
 
 export namespace OpenClosedTriggers {
     export function xCollapseTrigger(
@@ -160,16 +161,7 @@ export namespace OpenClosedTriggers {
                 )
                 ),
                 transition('open => closed', [
-                    useAnimation(Animations.Y_COLLAPSE_ANIMATION
-                        , {
-                            params: {
-                                startHeight: config.startHeight
-                                , endHeight: config.endHeight
-                                , timings: config.timings
-                            }
-                        }
-                    )
-                    , useAnimation(Animations.ZOOM_ANIMATION
+                    useAnimation(Animations.ZOOM_ANIMATION
                         , {
                             params: {
                                 startScale: config.startScale
@@ -178,18 +170,18 @@ export namespace OpenClosedTriggers {
                             }
                         }
                     )
-                ]),
-                transition('closed => open', [
-                    useAnimation(Animations.ZOOM_ANIMATION
+                    , useAnimation(Animations.Y_COLLAPSE_ANIMATION
                         , {
                             params: {
-                                startScale: config.endScale
-                                , endScale: config.startScale
+                                startHeight: config.startHeight
+                                , endHeight: config.endHeight
                                 , timings: config.timings
                             }
                         }
                     )
-                    , useAnimation(Animations.Y_COLLAPSE_ANIMATION
+                ]),
+                transition('closed => open', [
+                    useAnimation(Animations.Y_COLLAPSE_ANIMATION
                         , {
                             params: {
                                 startHeight: config.endHeight
@@ -198,6 +190,103 @@ export namespace OpenClosedTriggers {
                             }
                         }
                     )
+                    , useAnimation(Animations.ZOOM_ANIMATION
+                        , {
+                            params: {
+                                startScale: config.endScale
+                                , endScale: config.startScale
+                                , timings: config.timings
+                            }
+                        }
+                    )
+
+                ])
+            ]
+        )
+    }
+    export function yCollapseAndFadeAwayTrigger(
+        selector: string
+        , config: YCollapseAndFade
+    ) {
+        return trigger(
+            selector
+            , [
+                state('open', style(
+                    {
+                        opacity: config.startOpacity
+                        , height: config.startHeight
+                    }
+                )
+                ),
+                state('closed', style(
+                    {
+                        opacity: config.endOpacity
+                        , height: config.endHeight
+                        , transform: `translate(${config.translateX}, ${config.translateY})`
+                    }
+                )
+                ),
+                transition('open => closed', [
+                    group([
+                        useAnimation(Animations.FADE_ANIMATION
+                            , {
+                                params: {
+                                    startOpacity: config.startOpacity
+                                    , endOpacity: config.endOpacity
+                                    , timings: config.timings
+                                }
+                            }
+                        )
+                        , useAnimation(Animations.TRANSLATE_ANIMATION
+                            , {
+                                params: {
+                                    translateX: config.translateX
+                                    , translateY: config.translateY
+                                    , timings: config.timings
+                                }
+                            }
+                        )
+                    ])
+                    , useAnimation(Animations.Y_COLLAPSE_ANIMATION
+                        , {
+                            params: {
+                                startHeight: config.startHeight
+                                , endHeight: config.endHeight
+                                , timings: config.timings
+                            }
+                        }
+                    )
+                ]),
+                transition('closed => open', [
+                    useAnimation(Animations.Y_COLLAPSE_ANIMATION
+                        , {
+                            params: {
+                                startHeight: config.endHeight
+                                , endHeight: config.startHeight
+                                , timings: config.timings
+                            }
+                        }
+                    )
+                    , group([
+                         useAnimation(Animations.FADE_ANIMATION
+                            , {
+                                params: {
+                                    startOpacity: config.endOpacity
+                                    , endOpacity: config.startOpacity
+                                    , timings: config.timings
+                                }
+                            }
+                        )
+                        , useAnimation(Animations.TRANSLATE_ANIMATION
+                            , {
+                                params: {
+                                    translateX: 0
+                                    , translateY: 0
+                                    , timings: config.timings
+                                }
+                            }
+                        )
+                    ])
                 ])
             ]
         )

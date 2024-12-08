@@ -20,6 +20,16 @@ export namespace AnimationsConfigs {
          * which decelerates near the end of the duration.
          */
         timings?: string | number;
+        /**
+         * The value given to the translate X-Axis CSS function, as in `transform: translate(startTranslate, 0)`, on animation start.
+         * The default value is 100%.
+         */
+        translateX?: string;
+        /**
+         * The value given to the translate Y-Axis CSS function, as in `transform: translate(0, startTranslate)`, on animation start.
+         * The default value is 100%.
+         */
+        translateY?: string;
     }
     /**
      * Defines a set of configuration params for the Fade and Zoom effect.
@@ -115,5 +125,21 @@ export namespace AnimationsConfigs {
          * The default value is 0.
          */
         endScale?: number
+    }
+    /**
+     * Defines a set of configuration params for the Y-Axis Collapse and Fade effect.
+     * Use the defined params to customize the effect.
+     */
+    export interface YCollapseAndFade extends YCollapseConfig {
+        /**
+         * Opacity, as in the CSS property `opacity`, on animation start.
+         * The default value is 1.
+         */
+        startOpacity?: number
+        /**
+         * Opacity, as in the CSS property `opacity`, on animation end.
+         * The default value is 0.
+         */
+        endOpacity?: number
     }
 }

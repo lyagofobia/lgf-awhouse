@@ -9,6 +9,7 @@ import { YCollapse } from "./configs/y-collapse.config";
 import { FadeAndZoom } from "./configs/fade-and-zoom.config";
 import { Zoom } from "./configs/zoom.config";
 import { YCollapseAndZoom } from "./configs/y-collapse-and-zoom.config";
+import { YCollapseAndFade } from "./configs/y-collapse-and-fade-away.config";
 
 export namespace LgfTriggers {
     /**
@@ -76,6 +77,8 @@ export namespace LgfTriggers {
             , startScale: Defaults.START_SCALE
             , endOpacity: Defaults.END_OPACITY
             , endScale: Defaults.END_SCALE
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
@@ -133,6 +136,8 @@ export namespace LgfTriggers {
         , config: AnimationsConfigs.XCollapseConfig = {
             startWidth: Defaults.START_WIDTH
             , endWidth: Defaults.END_WIDTH
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
@@ -191,6 +196,8 @@ export namespace LgfTriggers {
         , config: AnimationsConfigs.XCollapseConfig = {
             startWidth: Defaults.START_WIDTH
             , endWidth: Defaults.END_WIDTH
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
@@ -248,6 +255,8 @@ export namespace LgfTriggers {
         , config: AnimationsConfigs.YCollapseConfig = {
             startHeight: Defaults.START_HEIGHT
             , endHeight: Defaults.END_HEIGHT
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
@@ -377,6 +386,8 @@ export namespace LgfTriggers {
         , config: AnimationsConfigs.ZommConfig = {
             startScale: Defaults.START_SCALE
             , endScale: Defaults.END_SCALE
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
@@ -436,11 +447,75 @@ export namespace LgfTriggers {
             , endScale: Defaults.END_SCALE
             , startHeight: Defaults.START_HEIGHT
             , endHeight: Defaults.END_HEIGHT
+            , translateX: Defaults.NO_TRANSLATE
+            , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
         }
     ) {
         const zoom = new YCollapseAndZoom(config);
         return OpenClosedTriggers.yCollapseAndZoomTrigger(selector, zoom);
+    }
+    /**
+     * Retrieves an implementation of Y-axis Collapse and Fade animation on open-close state changes.
+     * @param selector Trigger name on the animated parent element.
+     * @param config Animation configuration defined by [`YCollapseAndFade`](./animations-config.d.ts).
+     * Use it to customize the animation.
+     * @returns Animation Trigger ready to be declared on an Angular Component.
+     * 
+     * @usageNotes
+     * Call this animation trigger in the `animations` section of `@Component` metadata.
+     * You can customize it via `config`, by setting new values to the defined config params.
+     * In the template, reference the trigger by name and bind it to a trigger expression that
+     * evaluates to a defined animation state, using the following format:
+     *
+     * `[@triggerName]="expression"`
+     * ### Usage Example
+     *
+     * The following example calls the animation trigger reference by accessing the
+     * `LgfTriggers` namespace and assigning a trigger name, a timing configuration of
+     * 200 miliseconds.
+     *
+     * ```typescript
+     * @Component({
+     *   selector: "my-component",
+     *   templateUrl: "my-component-tpl.html",
+     *   animations: [
+     *     LgfTriggers.openClosedYCollapseAndFade('myAnimationTrigger', {timings:'200ms'})
+     *   ]
+     * })
+     * class MyComponent {
+     *   myTriggerExpression = "something";
+     * }
+     * ```
+     * The template associated with this component makes use of the defined trigger
+     * by binding to an element within its template code. The expression sets the two
+     * base states to this animation: 'open' and 'closed'.
+     *
+     * ```html
+     * <!-- Parent div setted with `myAnimationTrigger` -->
+     * <div [@myAnimationTrigger]="myTriggerExpression ? 'open' : 'closed'">...</div>
+     * <!-- End of parent div -->
+     * ```
+     * Whenever there is a change in the defined state, the animation will toggle between the defined `start` and `end`
+     * parameters.
+     * 
+     * This is most useful to create toggle effects.
+     */
+    export function openClosedYCollapseAndFadeAway(
+        selector: string
+        , config: AnimationsConfigs.YCollapseAndFade = {
+            startHeight: Defaults.START_HEIGHT
+            , endHeight: Defaults.END_HEIGHT
+            , startOpacity: Defaults.START_OPACITY
+            , endOpacity: Defaults.END_OPACITY
+            , translateX: Defaults.TRANSLATE_REVERSE
+            , translateY: Defaults.NO_TRANSLATE
+            , timings: Defaults.TIMING
+        }
+    ) {
+        const animationConfig = new YCollapseAndFade(config);
+        let trigger = OpenClosedTriggers.yCollapseAndFadeAwayTrigger(selector, animationConfig);
+        return trigger;
     }
 }
 
