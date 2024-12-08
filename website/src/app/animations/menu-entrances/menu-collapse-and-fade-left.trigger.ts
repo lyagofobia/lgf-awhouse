@@ -19,13 +19,22 @@ export function menuCollapseAndFadeLeft(
             , translateX?: string
             , timings?: string | number
         } = {
-            startHeight: AnimationDefaults.START_HEIGHT
-            , endHeight: AnimationDefaults.END_HEIGHT
-            , startOpacity: AnimationDefaults.START_SCALE
-            , endOpacity: AnimationDefaults.END_SCALE
+            startHeight: AnimationDefaults.MENU_COLLAPSE_START
+            , endHeight: AnimationDefaults.MENU_COLLAPSE_END
+            , startOpacity: AnimationDefaults.MENU_OPACITY_START
+            , endOpacity: AnimationDefaults.MENU_OPACITY_END
             , translateX: AnimationDefaults.LEFT_TRANSLATE
-            , timings: AnimationDefaults.TIMING
+            , timings: AnimationDefaults.MENU_TIMINGS
         }
 ) {
-    return LgfTriggers.openClosedYCollapseAndFadeAway(selector, config);
+    let defaultConfig = {
+        startHeight: AnimationDefaults.MENU_COLLAPSE_START
+        , endHeight: AnimationDefaults.MENU_COLLAPSE_END
+        , startOpacity: AnimationDefaults.MENU_OPACITY_START
+        , endOpacity: AnimationDefaults.MENU_OPACITY_END
+        , translateX: AnimationDefaults.LEFT_TRANSLATE
+        , timings: AnimationDefaults.MENU_TIMINGS
+    }
+
+    return LgfTriggers.openClosedYCollapseAndFadeAway(selector, Object.assign(defaultConfig, config));
 }

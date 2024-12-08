@@ -4,6 +4,7 @@ import { faBars, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { sideBarXCollapse } from '../../animations/sidebar-transitions/sidebar-collapse.trigger';
 import { menuCollapseAndFadeLeft } from '../../animations/menu-entrances/menu-collapse-and-fade-left.trigger';
+import { menuCollapseAndZoom } from '../../animations/menu-entrances/menu-collapse-and-zoom.trigger';
 /**
  * Implements the Website's Sidebar. It provides some inputs to set collapse states, 
  * menu items and syle.
@@ -13,8 +14,8 @@ import { menuCollapseAndFadeLeft } from '../../animations/menu-entrances/menu-co
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
   animations: [
-    menuCollapseAndFadeLeft('sectionCollapse', { startHeight: '*', endHeight: '0px', startOpacity: 1, endOpacity: 0, translateX: '-100%', timings: '150ms ease-out' })
-    , sideBarXCollapse('barCollapse', { startWidth: '280px', endWidth: '60px', timings: '250ms ease-out' })
+    menuCollapseAndZoom('sectionCollapse')
+    , sideBarXCollapse('barCollapse')
   ],
   providers: [provideAnimations()]
 })

@@ -16,10 +16,15 @@ export function sideBarXCollapse(
             , endWidth?: string
             , timings?: string | number
         } = {
-            startWidth: AnimationDefaults.START_WIDTH
-            , endWidth: AnimationDefaults.END_WIDTH
-            , timings: AnimationDefaults.TIMING
+            startWidth: AnimationDefaults.SIDEBAR_COLLAPSE_WIDTH_START
+            , endWidth: AnimationDefaults.SIDEBAR_COLLAPSE_WIDTH_END
+            , timings: AnimationDefaults.SIDEBAR_TIMINGS
         }
 ) {
-    return LgfTriggers.openClosedXCollapse(selector, config);
+    let defaultConfig = {
+        startWidth: AnimationDefaults.SIDEBAR_COLLAPSE_WIDTH_START
+        , endWidth: AnimationDefaults.SIDEBAR_COLLAPSE_WIDTH_END
+        , timings: AnimationDefaults.SIDEBAR_TIMINGS
+    }
+    return LgfTriggers.openClosedXCollapse(selector, Object.assign(defaultConfig, config));
 }

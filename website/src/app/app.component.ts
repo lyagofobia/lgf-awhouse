@@ -15,9 +15,17 @@ import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/lay
   animations: [layoutViewFadeAndZoomTrigger('routeTransition', { timings: '150ms' })]
 })
 export class AppComponent {
+  /**
+   * Menu items displayed on the sidebar for navigation.
+   */
   menuItems: MenuItem[] = [];
-
+  /**
+   * Current Routed Page Title.
+   */
   title?: string;
+  /**
+   * Current Routed Page Path.
+   */
   path?: string[] = [];
 
   constructor(menu: MenuService, protected router: Router) {

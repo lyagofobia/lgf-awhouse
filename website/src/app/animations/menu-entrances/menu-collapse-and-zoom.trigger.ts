@@ -18,12 +18,19 @@ export function menuCollapseAndZoom(
             , endScale?: number
             , timings?: string | number
         } = {
-            startHeight: AnimationDefaults.START_HEIGHT
-            , endHeight: AnimationDefaults.END_HEIGHT
-            , startScale: AnimationDefaults.START_SCALE
-            , endScale: AnimationDefaults.END_SCALE
-            , timings: AnimationDefaults.TIMING
+            startHeight: AnimationDefaults.MENU_COLLAPSE_START
+            , endHeight: AnimationDefaults.MENU_COLLAPSE_END
+            , startScale: AnimationDefaults.MENU_ZOOM_START
+            , endScale: AnimationDefaults.MENU_ZOOM_END
+            , timings: AnimationDefaults.MENU_TIMINGS
         }
 ) {
-    return LgfTriggers.openClosedYCollapseAndZoom(selector, config);
+    let defaultConfig = {
+        startHeight: AnimationDefaults.MENU_COLLAPSE_START
+        , endHeight: AnimationDefaults.MENU_COLLAPSE_END
+        , startScale: AnimationDefaults.MENU_ZOOM_START
+            , endScale: AnimationDefaults.MENU_ZOOM_END
+        , timings: AnimationDefaults.MENU_TIMINGS
+    }
+    return LgfTriggers.openClosedYCollapseAndZoom(selector, Object.assign(defaultConfig, config));
 }
