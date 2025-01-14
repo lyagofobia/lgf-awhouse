@@ -26,7 +26,7 @@
         @if(item.icon){
         <fa-icon class="mx-2" [icon]="item.icon || icons.faCaretRight"></fa-icon>
         }
-        <p class="h5 m-0 text-truncate">{{item.title}}</p>
+        <p class="fs-5 fw-bold m-0 text-truncate">{{item.title}}</p>
     </div>
     <lgf-furnishing-list [@sectionCollapse]="item.isCollapsed ? 'closed' : 'open'" class="bg-dark"
         [ngClass]="{'ps-2' : !xCollapse}" [listItems]="item.submenu">
@@ -47,6 +47,6 @@
         @if(item.icon){
         <fa-icon class="mx-2" [icon]="item.icon || icons.faCaretRight"></fa-icon>
         }
-        <p class="h5 text-truncate m-0">{{item.title}}</p>
+        <p class="fs-6 fw-bold text-truncate m-0">{{item.title}}</p>
     </a>
 </ng-template>

@@ -12,14 +12,18 @@ export function layoutViewFadeAndZoomTrigger(
     , config: {
         startOpacity?: number
         , startScale?: number
+        , startHeight?: string
         , endOpacity?: number
         , endScale?: number
+        , endHeight?: string
         , timings?: string | number
     } = {
             startOpacity: AnimationDefaults.LAYOUT_VIEW_OPACITY_START
             , startScale: AnimationDefaults.LAYOUT_VIEW_SCALE_START
+            , startHeight: AnimationDefaults.LAYOUT_VIEW_HEIGHT_START
             , endOpacity: AnimationDefaults.LAYOUT_VIEW_OPACITY_END
             , endScale: AnimationDefaults.LAYOUT_VIEW_SCALE_END
+            , endHeight: AnimationDefaults.LAYOUT_VIEW_HEIGHT_END
             , timings: AnimationDefaults.LAYOUT_VIEW_TIMINGS
         }
 ) {

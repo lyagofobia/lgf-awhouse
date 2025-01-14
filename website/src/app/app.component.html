@@ -1,27 +1,22 @@
-<div class="container-fluid g-0">
-    <div class="row g-0">
-        <div class="col">
-            <div class="row g-0">
-                <!-- Header -->
-                <lgf-header></lgf-header>
-            </div>
-            <div class="d-flex">
-                <!-- Sidebar-->
-                <lgf-sidebar [menuItems]="menuItems" [config]="{style: 'height: 100vh;'}"></lgf-sidebar>
-                <!-- Main section-->
-                <section class="flex-fill">
-                    <lgf-view [title]="this.title" [path]="this.path">
-                        <div [@routeTransition]="this.path">
-                            <router-outlet></router-outlet>
-                        </div>
-                    </lgf-view>
-                    <!-- Page content-->
-                </section>
-            </div>
-            <div class="row g-0 align-self-strech">
-                <!-- Page footer-->
-                <lgf-footer class="border-top"></lgf-footer>
-            </div>
+<div class="container-fluid g-0 font-monospace fixed-top">
+    <!-- Header -->
+    <lgf-header></lgf-header>
+    <!-- Content -->
+    <div class="d-flex flex-column">
+        <div class="d-flex">
+            <!-- Sidebar-->
+            <lgf-sidebar [menuItems]="menuItems" [config]="{style: 'height: 100%;'}"></lgf-sidebar>
+            <!-- Main section-->
+            <section class="flex-fill" style="position: relative; height: 87dvh; overflow-y: auto; overflow-x: visible;">
+                <!-- Page content-->
+                <lgf-view [title]="this.title" [path]="this.path">
+                    <div [@routeTransition]="this.path">
+                        <router-outlet></router-outlet>
+                    </div>
+                </lgf-view>
+            </section>
         </div>
     </div>
+    <!-- Page footer-->
+    <lgf-footer class="border-top"></lgf-footer>
 </div>

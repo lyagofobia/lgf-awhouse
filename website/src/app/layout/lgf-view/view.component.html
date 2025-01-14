@@ -1,4 +1,4 @@
-<div class="container-fluid d-flex border-bottom">
+<div class="container-fluid d-flex border-bottom ">
     <div [@routeTransition]="path" class="d-flex">
         <div [@collapseOut]="path" class="d-flex flex-column">
             <div class="d-flex overflow-hidden text-nowrap">
@@ -40,4 +40,6 @@
         </div>
     </div>
 </div>
-<ng-content></ng-content>
+<div class="p-3">
+    <ng-content></ng-content>
+</div>
