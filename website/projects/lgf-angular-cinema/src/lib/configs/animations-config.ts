@@ -49,6 +49,11 @@ export namespace AnimationsConfigs {
          */
         startScale?: number;
         /**
+         * Height, as in the CSS property `height`, on animation start.
+         * The default value is '0%'.
+         */
+        startHeight?: string;
+        /**
          * Opacity, as in the CSS property `opacity`, on animation end.
          * The default value is 1.
          */
@@ -58,6 +63,11 @@ export namespace AnimationsConfigs {
          * The default value is 1.
          */
         endScale?: number;
+        /**
+         * Height, as in the CSS property `height`, on animation end.
+         * The default value is '100%'.
+         */
+        endHeight?: string;
     }
     /**
      * Defines a set of configuration params for the X-Axis Collapse effect.

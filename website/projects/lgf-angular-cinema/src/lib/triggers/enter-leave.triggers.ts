@@ -9,8 +9,10 @@ export namespace EnterLeaveTriggers {
         , config: FadeAndZoom = {
             startOpacity: Defaults.START_OPACITY
             , startScale: Defaults.START_SCALE
+            , startHeight: Defaults.START_HEIGHT
             , endOpacity: Defaults.END_OPACITY
             , endScale: Defaults.END_SCALE
+            , endHeight: Defaults.END_HEIGHT
             , timings: Defaults.TIMING
         }
     ) {
@@ -23,6 +25,17 @@ export namespace EnterLeaveTriggers {
                             {
                                 opacity: config.startOpacity
                                 , scale: config.startScale
+                                , height: config.startHeight
+                            }
+                        )
+                    ]
+                        , { optional: true })
+                    , query(':leave', [
+                        style(
+                            {
+                                opacity: config.startOpacity
+                                , scale: config.startScale
+                                , height: config.startHeight
                             }
                         )
                     ]
@@ -42,6 +55,8 @@ export namespace EnterLeaveTriggers {
                                 params: {
                                     startScale: config.endScale
                                     , endScale: config.startScale
+                                    , startHeight: config.startHeight
+                                    , endHeight: config.endHeight
                                     , timings: config.timings
                                 }
                             }
@@ -63,6 +78,8 @@ export namespace EnterLeaveTriggers {
                                 params: {
                                     startScale: config.startScale
                                     , endScale: config.endScale
+                                    , startHeight: config.startHeight
+                                    , endHeight: config.endHeight
                                     , timings: config.timings
                                 }
                             }

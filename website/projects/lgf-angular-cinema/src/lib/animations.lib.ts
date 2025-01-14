@@ -20,12 +20,14 @@ export namespace Animations {
             style(
                 {
                     scale: '{{ startScale }}'
+                    , height: '{{ startHeight }}'
                 }
             )
             , animate('{{ timings }}'
                 , style(
                     {
                         scale: '{{ endScale }}'
+                        , height: '{{ endHeight }}'
                     }
                 ))
         ]

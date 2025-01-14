@@ -75,8 +75,10 @@ export namespace LgfTriggers {
         , config: AnimationsConfigs.FadeAndZoomConfig = {
             startOpacity: Defaults.START_OPACITY
             , startScale: Defaults.START_SCALE
+            , startHeight: Defaults.START_HEIGHT
             , endOpacity: Defaults.END_OPACITY
             , endScale: Defaults.END_SCALE
+            , endHeight: Defaults.END_HEIGHT
             , translateX: Defaults.NO_TRANSLATE
             , translateY: Defaults.NO_TRANSLATE
             , timings: Defaults.TIMING
