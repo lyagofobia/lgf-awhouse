@@ -1,13 +1,13 @@
-<div class="container-fluid g-0 font-monospace fixed-top">
+<div class="container-fluid g-0 font-monospace">
     <!-- Header -->
     <lgf-header></lgf-header>
     <!-- Content -->
     <div class="d-flex flex-column">
         <div class="d-flex">
             <!-- Sidebar-->
-            <lgf-sidebar [menuItems]="menuItems" [config]="{style: 'height: 100%;'}"></lgf-sidebar>
+            <lgf-sidebar [menuItems]="menuItems" [config]="{style:' height:100dvmin; overflow-y: auto'}"></lgf-sidebar>
             <!-- Main section-->
-            <section class="flex-fill" style="position: relative; height: 87dvh; overflow-y: auto; overflow-x: visible;">
+            <section class="flex-fill" style="position: relative; overflow-y: auto; overflow-x: visible;">
                 <!-- Page content-->
                 <lgf-view [title]="this.title" [path]="this.path">
                     <div [@routeTransition]="this.path">
