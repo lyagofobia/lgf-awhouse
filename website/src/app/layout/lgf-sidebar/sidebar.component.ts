@@ -9,14 +9,15 @@ import { menuCollapseAndFadeLeft } from '../../animations/menu-entrances/menu-co
  * menu items and syle.
  */
 @Component({
-  selector: 'lgf-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss',
-  animations: [
-    menuCollapseAndFadeLeft('sectionCollapse')
-    , sideBarXCollapse('barCollapse')
-  ],
-  providers: [provideAnimations()]
+    selector: 'lgf-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrl: './sidebar.component.scss',
+    animations: [
+        menuCollapseAndFadeLeft('sectionCollapse'),
+        sideBarXCollapse('barCollapse')
+    ],
+    providers: [provideAnimations()],
+    standalone: false
 })
 export class SidebarComponent {
   icons = {

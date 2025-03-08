@@ -7,12 +7,11 @@ import { filter } from 'rxjs';
 import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/layout-view.trigger';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, LayoutModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  animations: [layoutViewFadeAndZoomTrigger('routeTransition')]
+    selector: 'app-root',
+    imports: [RouterOutlet, LayoutModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    animations: [layoutViewFadeAndZoomTrigger('routeTransition')]
 })
 export class AppComponent {
   /**
