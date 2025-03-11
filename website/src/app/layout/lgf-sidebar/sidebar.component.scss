@@ -1,0 +1,8 @@
+@use '@angular/material' as mat;
+
+mat-drawer-container {
+    @include mat.sidenav-overrides((container-width: '20dwvmin'));
+}
+mat-accordion {
+    @include mat.expansion-overrides((container-shape: 'none', actions-divider-color: 'blue'));
+}

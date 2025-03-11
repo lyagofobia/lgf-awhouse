@@ -5,10 +5,11 @@ import { MenuItem } from './core/menu/menu-item';
 import { LayoutModule } from './layout/layout.module';
 import { filter } from 'rxjs';
 import { layoutViewFadeAndZoomTrigger } from './animations/route-transitions/layout-view.trigger';
+import { LgfAngularFurnishingsModule } from 'lgf-angular-furnishings';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, LayoutModule],
+    imports: [RouterOutlet, LayoutModule, LgfAngularFurnishingsModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     animations: [layoutViewFadeAndZoomTrigger('routeTransition')]

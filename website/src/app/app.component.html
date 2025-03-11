@@ -5,9 +5,9 @@
     <div class="d-flex flex-column">
         <div class="d-flex">
             <!-- Sidebar-->
-            <lgf-sidebar [menuItems]="menuItems" [config]="{style:' height:100dvmin; overflow-y: auto'}"></lgf-sidebar>
+            <lgf-sidebar [menuItems]="menuItems" [config]="{style:' height:100dvh; overflow-y: auto'}"></lgf-sidebar>
             <!-- Main section-->
-            <section class="flex-fill" style="position: relative; overflow-y: auto; overflow-x: visible;">
+            <section class="flex-fill" style="position:relative; overflow-y:auto;">
                 <!-- Page content-->
                 <lgf-view [title]="this.title" [path]="this.path">
                     <div [@routeTransition]="this.path">

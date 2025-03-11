@@ -1,8 +1,8 @@
 <!-- START Sidebar (left)-->
-<nav class="border-end" [style]="config?.style" [@barCollapse]="xCollapse ? 'closed' : 'open'">
-    <div class="d-flex flex-row-reverse">
+<nav class="border-end g-0" [style]="config?.style" [@barCollapse]="xCollapse ? 'closed' : 'open'">
+    <div class="d-flex flex-row-reverse py-2">
         <button class="btn btn-light bg-transparent border-0" type="button" (click)="xCollapse=!xCollapse">
-            <fa-icon class="p-2" [icon]="icons.faBars" size="lg">
+            <fa-icon class="px-2 mx-1" [icon]="icons.faBars" size="lg">
             </fa-icon>
         </button>
     </div>
@@ -20,16 +20,15 @@
 <!-- END Sidebar (left)-->
 
 <ng-template #menuHeadingTmp let-item="menuItem">
-    <div [ngClass]="{'border-bottom' : item.isCollapsed}"
-        class="list-group-item list-group-item-action d-flex align-items-center border-0 bg-dark text-white"
-        style="border-radius: 0%;" (click)="item.isCollapsed=!item.isCollapsed;">
+    <div [ngClass]="{'border-bottom' : item.isCollapsed}" class="d-flex align-items-center border-0 px-3 py-2"
+        (click)="item.isCollapsed=!item.isCollapsed;">
         @if(item.icon){
-        <fa-icon class="mx-2" [icon]="item.icon || icons.faCaretRight"></fa-icon>
+        <fa-icon size="lg" [icon]="item.icon || icons.faCaretRight"></fa-icon>
         }
-        <p class="fs-5 fw-bold m-0 text-truncate">{{item.title}}</p>
+        <p class="m-0 mx-2 text-truncate fs-6 fw-bold">{{item.title}}</p>
     </div>
-    <lgf-furnishing-list [@sectionCollapse]="item.isCollapsed ? 'closed' : 'open'" class="bg-dark"
-        [ngClass]="{'ps-2' : !xCollapse}" [listItems]="item.submenu">
+    <lgf-furnishing-list [@sectionCollapse]="item.isCollapsed ? 'closed' : 'open'" [ngClass]="{'ps-2' : !xCollapse}"
+        [listItems]="item.submenu">
         <ng-template #listHeadingTmp let-item="listItem">
             <ng-container [ngTemplateOutlet]="menuHeadingTmp" [ngTemplateOutletContext]="{menuItem: item}">
             </ng-container>
@@ -42,11 +41,10 @@
 </ng-template>
 
 <ng-template #menuItemTmp let-item="menuItem">
-    <a class="list-group-item list-group-item-action d-flex align-items-center border-0"
-         style="border-radius: 0%;" [routerLink]="item.link">
+    <a class="d-flex align-items-center border-0 px-4 pb-2" [routerLink]="item.link">
         @if(item.icon){
-        <fa-icon class="mx-2" [icon]="item.icon || icons.faCaretRight"></fa-icon>
+        <fa-icon [icon]="item.icon || icons.faCaretRight"></fa-icon>
         }
-        <p class="fs-6 fw-bold text-truncate m-0">{{item.title}}</p>
+        <p class="m-0 mx-2 fw-bold text-truncate m-0">{{item.title}}</p>
     </a>
 </ng-template>

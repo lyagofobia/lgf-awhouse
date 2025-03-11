@@ -7,6 +7,9 @@ import { SidebarComponent } from "./lgf-sidebar/sidebar.component";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { ViewComponent } from "./lgf-view/view.component";
 import { LgfAngularFurnishingsModule } from 'lgf-angular-furnishings'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatExpansionModule } from '@angular/material/expansion'
 @NgModule({
   declarations: [
     HeaderComponent
@@ -17,7 +20,10 @@ import { LgfAngularFurnishingsModule } from 'lgf-angular-furnishings'
   imports: [
     RoutesModule,
     FontAwesomeModule,
-    LgfAngularFurnishingsModule
+    LgfAngularFurnishingsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatExpansionModule
   ],
   exports: [
     CommonModule

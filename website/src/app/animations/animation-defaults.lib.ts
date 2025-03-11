@@ -14,7 +14,7 @@ export namespace AnimationDefaults {
     export const MENU_OPACITY_START = 1;
     export const MENU_OPACITY_END = 0;
     export const SIDEBAR_COLLAPSE_WIDTH_START = '250px';
-    export const SIDEBAR_COLLAPSE_WIDTH_END = '60px';
+    export const SIDEBAR_COLLAPSE_WIDTH_END = '50px';
     export const SIDEBAR_TIMINGS = '250ms ease-out';
     export const LEFT_TRANSLATE = '-100%';
     export const RIGHT_TRANSLATE = '100%';
