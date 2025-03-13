@@ -7,14 +7,31 @@
             <!-- Sidebar-->
             <lgf-sidebar [menuItems]="menuItems" [config]="{style:' height:100dvh; overflow-y: auto'}"></lgf-sidebar>
             <!-- Main section-->
-            <section class="flex-fill" style="position:relative; overflow-y:auto;">
+            <mat-drawer-container class="flex-fill" style="position:relative; overflow-y:auto;">
                 <!-- Page content-->
                 <lgf-view [title]="this.title" [path]="this.path">
                     <div [@routeTransition]="this.path">
                         <router-outlet></router-outlet>
                     </div>
                 </lgf-view>
-            </section>
+                <!-- User sidenav-->
+                <mat-drawer #drawer mode="over" autosize [autoFocus]="false" [(opened)]="userSideNavOpened"
+                    position="end" class="rounded-0 d-flex">
+                    <mat-list role="list" class="d-flex flex-column">
+                        <mat-list-item role="listitem" class="d-flex">
+                            <span class="w-100 fs-5 fw-bold d-flex align-items-center justify-content-between">
+                                <span>
+                                    <fa-icon class="me-2" [icon]="icons.faMoon"></fa-icon>
+                                    Dark Theme
+                                </span>
+                                <mat-slide-toggle (change)="darkThemeToggleChange($event)" >
+                                </mat-slide-toggle>
+                            </span>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </mat-list>
+                </mat-drawer>
+            </mat-drawer-container>
         </div>
     </div>
     <!-- Page footer-->

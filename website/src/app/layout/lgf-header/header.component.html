@@ -1,9 +1,18 @@
 <mat-toolbar class="container-fluid">
-  <div class="row align-items-center">
-    <div class="d-flex align-items-center" routerLink="" style="cursor: pointer;">
-      <img src="../../../assets/img/logo-light.png" alt="Lyagofobia's" class="img-fluid my-2"
-        style="height: 43px; width: 43px;">
-      <h1 class="mb-0 mx-3">The Awhouse</h1>
+  <div class="row flex-fill align-items-center">
+    <div class="col-6">
+      <div class="d-flex align-items-center" routerLink="" style="cursor: pointer;">
+        <img src="../../../assets/img/logo-light.png" alt="Lyagofobia's" class="img-fluid my-2"
+          style="height: 43px; width: 43px;">
+        <h1 class="mb-0 mx-3">The Awhouse</h1>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="d-flex flex-row-reverse align-items-center">
+        <button mat-icon-button (click)="userButtonClick()">
+          <fa-icon [icon]="icons.faUser"></fa-icon>
+        </button>
+      </div>
     </div>
   </div>
 </mat-toolbar>

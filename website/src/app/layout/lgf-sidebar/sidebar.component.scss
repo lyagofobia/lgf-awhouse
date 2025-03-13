@@ -1,8 +1,4 @@
 @use '@angular/material' as mat;
-
-mat-drawer-container {
-    @include mat.sidenav-overrides((container-width: '20dwvmin'));
-}
-mat-accordion {
-    @include mat.expansion-overrides((container-shape: 'none', actions-divider-color: 'blue'));
+button {
+    @include mat.icon-button-overrides((icon-size:'18px'));
 }

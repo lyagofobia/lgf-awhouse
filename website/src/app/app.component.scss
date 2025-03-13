@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+
+mat-drawer-container {
+    @include mat.sidenav-overrides((container-width: '300px'));
+}
+

@@ -1,8 +1,8 @@
 <!-- START Sidebar (left)-->
 <nav class="border-end g-0" [style]="config?.style" [@barCollapse]="xCollapse ? 'closed' : 'open'">
     <div class="d-flex flex-row-reverse py-2">
-        <button class="btn btn-light bg-transparent border-0" type="button" (click)="xCollapse=!xCollapse">
-            <fa-icon class="px-2 mx-1" [icon]="icons.faBars" size="lg">
+        <button mat-icon-button class="mx-1" type="button" (click)="xCollapse=!xCollapse">
+            <fa-icon [icon]="icons.faBars">
             </fa-icon>
         </button>
     </div>
@@ -20,7 +20,7 @@
 <!-- END Sidebar (left)-->
 
 <ng-template #menuHeadingTmp let-item="menuItem">
-    <div [ngClass]="{'border-bottom' : item.isCollapsed}" class="d-flex align-items-center border-0 px-3 py-2"
+    <div [ngClass]="{'border-bottom' : item.isCollapsed}" class="d-flex align-items-center border-0 px-3 py-2" style="cursor: pointer;"
         (click)="item.isCollapsed=!item.isCollapsed;">
         @if(item.icon){
         <fa-icon size="lg" [icon]="item.icon || icons.faCaretRight"></fa-icon>
