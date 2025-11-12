@@ -39,7 +39,6 @@
               "@angular/material/prebuilt-themes/azure-blue.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
@@ -105,7 +104,6 @@
               "@angular/material/prebuilt-themes/azure-blue.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           }
