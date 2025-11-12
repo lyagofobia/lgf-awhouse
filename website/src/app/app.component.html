@@ -24,7 +24,7 @@
                                     <fa-icon class="me-2" [icon]="icons.faMoon"></fa-icon>
                                     Dark Theme
                                 </span>
-                                <mat-slide-toggle (change)="darkThemeToggleChange($event)" >
+                                <mat-slide-toggle [checked]="themeService.currentTheme() == 0 ? true : false" (change)="darkThemeToggleChange($event)" >
                                 </mat-slide-toggle>
                             </span>
                         </mat-list-item>

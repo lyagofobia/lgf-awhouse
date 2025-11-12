@@ -57,7 +57,7 @@ export class AppComponent {
     faMoon: faMoon
   };
 
-  constructor(protected router: Router, private menu: MenuService, private layout: LayoutService, private themeService: ThemeService) {
+  constructor(protected router: Router, private menu: MenuService, private layout: LayoutService, protected themeService: ThemeService) {
     this.menuItems = menu.menuItems;
     this.userSideNavOpened = this.layout.userSideNavOpened;
 
@@ -75,6 +75,6 @@ export class AppComponent {
   }
 
   darkThemeToggleChange(value: MatSlideToggleChange) {
-    this.themeService.setDarkTheme(value.checked);
+    this.themeService.toggleTheme(value.checked);
   }
 }
