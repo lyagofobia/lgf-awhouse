@@ -23,7 +23,6 @@ export class ThemeService {
     this.setInLocalStorage(theme);
   }
   setInLocalStorage(theme: Theme) {
-    debugger
     localStorage.setItem('preferred-theme', Theme[theme]);
   }
   getFromLocalStorage(): Theme {
